@@ -1,0 +1,170 @@
+.economicAwards{
+	display: flex;
+	width: 100%;
+	height: 100%;
+	background: black;
+	padding: px(24) 0;
+
+
+	.modalContent{
+		display: flex;
+		width: 100%;
+
+		.modalContainer{
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+
+			p{
+				line-height: 1.5;
+			}
+
+			.table{
+				display: flex;
+				justify-content: center;
+				width: 100%;
+
+				table{
+					width: 70%;
+					border-collapse: collapse;
+					thead{
+						tr{
+							background: $grey-300;
+
+							th{
+								height: px(42);
+							}
+						}
+					}
+					tbody{
+						tr{
+							td{
+								height: px(42);
+								text-align: center;
+							}
+							&:nth-child(2n){
+								background: $grey-200;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.container{
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+
+		h2{
+			text-align: center;
+			margin: px(0) px(0) px(24) px(0);
+			color: $primary;
+		}
+
+		$content-width: calc(40vw - 84px);
+		$margin: 20px;
+		$spacing: 20px;
+		$bdrs: 6px;
+		$circle-size: 40px;
+		$icon-size: 32px;
+		$bdrs-icon: 100%;
+
+		$color1: #9251ac;
+		$color2: #d5a6e6;
+
+		$color3: #A6E5FD;
+		$color4: #177e89  ;
+
+		$color5: #24b47e;
+		$color6: #aff1b6;
+
+		$color7: #a98600;
+		$color8: #FFFF9F;
+
+		$color9: #b44772;
+		$color10: #fac6e5;
+
+		h2 {
+			margin: 5%;
+			text-align: center;
+			font-size: 2rem;
+			font-weight: 100;
+		}
+		.timeline {
+			display: flex;
+			flex-direction: column;
+			margin: $margin auto;
+			position: relative;
+
+			.cardWrapper{
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: space-between;
+
+				.card{
+					display: flex;
+					flex-direction: column;
+					width: 31%;
+					color: $white;
+
+					@include media-breakpoint-down('md'){
+						width: 100%;
+					}
+
+					.btn{
+						display: flex;
+
+						a{
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							padding: px(8) px(12);
+							border: px(1) solid #a2a1a1;
+							border-radius: px(6);
+							margin-top: px(12);
+							color: #a2a1a1;
+							cursor: pointer;
+							span{
+								color: #a2a1a1;
+								margin: px(0) px(3);
+							}
+						}
+
+						&.active{
+							a{
+								border: px(1) solid #F6CF06FF;
+								color: $green-500;
+							}
+							span{
+								color: $green-500;
+							}
+						}
+
+					}
+					img{
+						width: 100%;
+						object-fit: contain;
+						border-radius: px(6);
+					}
+
+					h3{
+						width: 100%;
+						margin: px(12) px(0);
+					}
+					p{
+						margin: px(0) px(0) px(48) px(0);
+					}
+				}
+			}
+
+
+		}
+
+
+
+
+	}
+}

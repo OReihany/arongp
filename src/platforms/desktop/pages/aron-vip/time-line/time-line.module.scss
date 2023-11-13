@@ -1,0 +1,233 @@
+.timeLine {
+	display: flex;
+	width: 100%;
+	position: relative;
+	padding: px(48) px(0);
+
+	&:before {
+		content: "";
+		background: #C5CAE9;
+		width: 5px;
+		height: 95%;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+
+		.cardWrapper {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			width: 100%;
+			margin-bottom: 24px;
+
+
+			.cardItem {
+				display: flex;
+				padding: 10px 30px;
+				border-radius: 4px;
+				background: #f5f5f5;
+				box-shadow: 0 20px 25px -15px rgba(0, 0, 0, 0.3);
+				width: 43%;
+
+				&:before {
+					content: " ";
+					width: 30px;
+					height: 30px;
+					background: #3F51B5;
+					border-radius: 50%;
+					position: absolute;
+					left: 50%;
+					margin-top: 25px;
+					margin-left: -15px;
+				}
+
+				.item {
+					display: flex;
+					width: 100%;
+					position: relative;
+
+					.cardContent {
+						display: flex;
+						flex-direction: column;
+						width: 100%;
+
+
+						.date {
+							display: inline-block;
+							position: absolute;
+							top: -10px;
+							right: -30px;
+							background: red;
+							padding: 12px;
+							border-radius: 4px;
+							font-size: 13px;
+							font-weight: 700;
+							color: white;
+							
+						}
+
+						h2 {
+							margin-top: 42px;
+							font-size: 24px;
+						}
+
+						p {
+							line-height: 2;
+							font-size: 14px;
+							margin: px(3) px(0);
+						}
+
+						.btn {
+							a {
+								display: inline-block;
+								padding: px(9) px(12);
+								border-radius: 5px;
+								background: $blue-500;
+								font-size: 14px;
+								font-weight: 600;
+								box-shadow: 0 px(3) px(6) 0 rgba(0, 0, 0, 0.12);
+								color: $white;
+								cursor: pointer;
+
+								&:hover {
+									transition: all ease-in-out 0.2s;
+									background: $blue-300;
+									color: $black-300;
+								}
+							}
+						}
+					}
+
+				}
+
+			}
+
+			&.right {
+				justify-content: end;
+
+				.cardItem {
+
+					.item {
+
+						.cardContent {
+
+							.date {
+								left: -30px !important;
+								right: unset;
+								
+							}
+						}
+
+					}
+
+				}
+			}
+		}
+	}
+}
+
+
+@include media-breakpoint-down('md') {
+	.timeLine {
+		padding: px(48) px(0);
+
+		&:before {
+			left: 90%;
+		}
+
+		.container {
+
+			.cardWrapper {
+				.cardItem {
+					width: 83%;
+
+					&:before {
+						left: 90%;
+					}
+
+					.item {
+						display: flex;
+						width: 100%;
+						position: relative;
+
+						.cardContent {
+							display: flex;
+							flex-direction: column;
+							width: 100%;
+
+
+							.date {
+								display: inline-block;
+								position: absolute;
+								top: -10px;
+								right: -30px;
+								background: red;
+								padding: 12px;
+								border-radius: 4px;
+								font-size: 13px;
+								font-weight: 700;
+								color: white;
+								
+							}
+
+							h2 {
+								margin-top: 42px;
+								font-size: 24px;
+							}
+
+							p {
+								line-height: 2;
+								font-size: 14px;
+								margin: px(3) px(0);
+							}
+
+							.btn {
+								a {
+									display: inline-block;
+									padding: px(9) px(12);
+									border-radius: 5px;
+									background: $blue-500;
+									font-size: 14px;
+									font-weight: 600;
+									box-shadow: 0 px(3) px(6) 0 rgba(0, 0, 0, 0.12);
+									color: $white;
+									cursor: pointer;
+
+									&:hover {
+										transition: all ease-in-out 0.2s;
+										background: $blue-300;
+										color: $black-300;
+									}
+								}
+							}
+						}
+
+					}
+
+				}
+
+				&.right {
+					justify-content: start;
+
+					.cardItem {
+
+						.item {
+
+							.cardContent {
+
+							}
+
+						}
+
+					}
+				}
+			}
+		}
+	}
+}

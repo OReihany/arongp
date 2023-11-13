@@ -1,0 +1,144 @@
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+:root {
+	font-size: 12px;
+	@include media-breakpoint-up('xxl') {
+		font-size: vw(12px);
+	}
+}
+
+html {
+	background: #fff;
+	overflow-x: hidden;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+html,
+body {
+	position: relative;
+	padding: 0;
+	margin: 0;
+	@include full-height();
+	@include full-width();
+	color: #435160;
+	-webkit-overflow-scrolling: touch;
+	overscroll-behavior: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: auto;
+	font-weight: 400;
+	font-size: px(12);
+	line-height: 1.4;
+}
+
+html,
+body,
+button,
+label,
+textarea,
+input {
+	font-smooth: always;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: auto;
+	font-size: px(12);
+}
+
+[lang='fa'] {
+	body,
+	button,
+	label,
+	textarea,
+	input {
+		font-family: "iranyekan", sans-serif;
+	}
+}
+
+[lang='en'] {
+	body,
+	button,
+	label,
+	textarea,
+	input {
+		font-family: "Open Sans", sans-serif;
+	}
+}
+
+.material-icons, .material-icons-outlined {
+	font-size: px(20);
+}
+
+#root {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	overflow-x: hidden !important;
+	@include full-height('min-height');
+}
+
+button {
+	border: none;
+}
+
+button, input, textarea {
+	outline-color: rgba($grey-400, 0.5);
+	outline-offset: 1px;
+}
+
+[dir="rtl"] {
+	.material-icons:not(.fixed), .material-icons-outlined:not(.fixed) {
+		transform: scaleX(-1);
+	}
+}
+
+.container {
+	@include make-container-max-widths();
+	@include make-container();
+
+	@include media-breakpoint-up('xxl') {
+		max-width: map_get($container-max-widths, 'xl') * $vw-ratio;
+
+		padding-right: $grid-gutter-width * $vw-ratio / 2;
+		padding-left: $grid-gutter-width * $vw-ratio / 2;
+	}
+}
+
+.grecaptcha-badge {
+	display: none;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.goog-te-banner-frame{
+	visibility: hidden !important;
+}
+.goog-logo-link{
+	display: none;
+}
+
+.skiptranslate.goog-te-gadget{
+	color: $black;
+}
+.goog-te-combo{
+	width: 100%;
+	height: 36px;
+	border: 1px solid black;
+	border-radius: 6px;
+	text-align: center;
+	color: $white;
+	background: black;
+}
+.goog-te-combo option{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 16px 0;
+	color: white;
+}

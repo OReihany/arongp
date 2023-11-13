@@ -1,0 +1,125 @@
+.modal{
+	display: none;
+
+	&.active{
+		display: flex;
+		transition: all ease-in-out 0.4s;
+	}
+
+	.container{
+		display: flex;
+		flex-direction: column;
+		position: fixed;
+		background: $white;
+		top: 120px;
+		left: 5%;
+		right: 5%;
+		bottom: 5%;
+		height: 80vh;
+		width: 90%;
+		z-index: 1000;
+		box-shadow: 0 px(3) px(20) 0 rgba(0, 0, 0, 0.42);
+		@include media-breakpoint-down('md'){
+			top: 96px;
+		}
+
+		.modalContent{
+			display: flex;
+			flex-direction: column;
+			height: 85%;
+			overflow: hidden;
+			verflow: -moz-scrollbars-none;
+			scrollbar-width: none;
+			overflow-y: scroll;
+			overflow-x: unset;
+			padding: px(24);
+
+			.title{
+				font-size: px(24);
+				font-weight: 600;
+				color: $primary;
+
+			}
+			.modalContentWrapper{
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+
+				.contentImage{
+					display: flex;
+					justify-content: center;
+				}
+
+				.content{
+					width: 100%;
+
+					h5{
+						font-size: px(18);
+						color: $black;
+						margin: px(12) px(8) px(12) px(0);
+						font-weight: 600;
+					}
+					p{
+						color: $grey-500;
+						font-size: px(14);
+						line-height: 1.5;
+						text-align: justify;
+					}
+					img{
+						width: 85%;
+						object-fit: contain;
+					}
+				}
+			}
+		}
+		//.modalContent::-webkit-scrollbar{
+		//	display: none;
+		//}
+		.modalFooter{
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			height: 15%;
+			padding-right: px(24);
+			border-top: px(1) solid $grey-400;
+			.closeModal{
+				display: flex;
+				align-items: center;
+				height: 60%;
+				padding: px(0) px(24);
+				border: px(1) solid $black-200;
+				font-size: px(14);
+				font-weight: 550;
+				cursor: pointer;
+				border-radius: px(6);
+				color: $grey-500;
+				&:hover{
+					background: $red-200;
+					color: $red-500;
+					border: px(1) solid $red-600;
+					transition: all ease-in-out 0.3s;
+				}
+			}
+			.registerModal{
+				display: flex;
+				align-items: center;
+				height: 60%;
+				padding: px(0) px(24);
+				border: px(1) solid $black-200;
+				font-size: px(14);
+				font-weight: 550;
+				cursor: pointer;
+				border-radius: px(6);
+				color: $grey-500;
+				margin-left: 16px;
+
+				&:hover{
+					background: #2fd57e;
+					color: #125739;
+					border: px(1) solid #0a460d;
+					transition: all ease-in-out 0.3s;
+				}
+			}
+		}
+	}
+}

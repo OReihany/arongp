@@ -1,0 +1,145 @@
+.news {
+	display: flex;
+	background: url("news.png") no-repeat;
+	background-size: cover !important;
+	height: 100%;
+	padding-bottom: px(48);
+	@include media-breakpoint-down('md') {
+		height: 100%;
+		padding-bottom: px(36);
+	}
+
+	.container {
+		display: flex;
+		flex-direction: column;
+
+		.newsTitle {
+			text-align: center;
+			font-size: px(24);
+			color: $white;
+			font-weight: 600;
+			margin: px(84) 0 px(24) 0;
+		}
+
+		.newsMenu {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+			padding: px(0) px(120);
+			border-bottom: px(1) solid $grey-300;
+			@include media-breakpoint-down('md') {
+				padding: 0;
+			}
+
+			.newsMenuItem {
+				font-size: px(14);
+				color: $grey-400;
+				list-style: none;
+				padding: px(12) px(46);
+				cursor: pointer;
+				@include media-breakpoint-down('md') {
+					padding: px(16);
+				}
+
+				&.active {
+					border-bottom: 2px solid $primary;
+					color: $primary;
+				}
+			}
+		}
+
+		div {
+			display: flex;
+			width: 100%;
+
+			@include media-breakpoint-down('md') {
+				overflow: hidden;
+				verflow: -moz-scrollbars-none;
+				scrollbar-width: none;
+				overflow-y: unset;
+				overflow-x: scroll;
+			}
+
+			.newsContentWrapper {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				overflow: hidden;
+				width: 100%;
+				margin-top: px(48);
+				@include media-breakpoint-down('md') {
+					min-width: 300%;
+				}
+
+				.newsContent {
+					border-radius: px(8);
+					background-color: $white;
+					display: flex;
+					flex-direction: column;
+					width: 30%;
+					overflow: hidden;
+
+					.newsContentImg {
+						width: 100%;
+						height: px(200);
+						object-fit: cover;
+					}
+
+					.newsContentDescription {
+						display: flex;
+						flex-direction: column;
+						height: px(158);
+						overflow: hidden;
+
+						p {
+							padding: px(8) px(16);
+							margin: 0;
+							height: 0;
+							font-size: px(14);
+							font-weight: 500;
+							line-height: 2;
+							text-align: justify;
+						}
+					}
+
+					.newsContentDate {
+						display: flex;
+						flex-direction: column;
+						height: px(32);
+						overflow: hidden;
+
+						p {
+							padding: px(6) px(16);
+							margin: 0;
+							height: 0;
+							font-size: px(14);
+							color: $grey-400;
+						}
+					}
+
+					.newsContentLink {
+						display: flex;
+
+						width: 100%;
+						padding: px(8) px(16);
+						justify-content: flex-end;
+
+						a {
+							color: $primary;
+							font-size: px(16);
+							font-weight: 600;
+						}
+					}
+				}
+			}
+		}
+
+		@include media-breakpoint-down('md') {
+			div::-webkit-scrollbar {
+				display: none;
+			}
+		}
+	}
+}

@@ -1,0 +1,65 @@
+.history{
+	display: flex;
+	flex-direction: column;
+	background: url('7th-July_crypto-post.jpg') no-repeat;
+	background-size: cover !important;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	padding: px(48) px(0);
+	&:after{
+		content: "";
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.7);
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.container{
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		z-index: 100;
+
+		.historyContent{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			h3{
+				color: $primary;
+				margin: 0 0 px(36) px(0);
+				padding: 0 0 px(12) px(0);
+				border-bottom: 3px solid $primary;
+				display: block;
+			}
+
+			p{
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				font-size: px(14);
+				font-weight: 600;
+				color: $white;
+				line-height: 2;
+				text-align: justify;
+				padding-left: px(36);
+				cursor: pointer;
+				span{
+					padding: px(0) px(12);
+				}
+				@include media-breakpoint-down('md'){
+					font-size: px(12);
+					padding-left: px(24);
+				}
+				&:hover{
+					span{
+						transition: all ease-in-out 0.3s;
+						color: $primary;
+					}
+				}
+			}
+		}
+	}
+}

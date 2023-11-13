@@ -1,0 +1,26 @@
+.introduce {
+	display: flex;
+	position: relative;
+	background: url('../../symbols/top-slider/top-slider.png') no-repeat;
+	width: 100%;
+	background-size: cover;
+	min-height: px(386);
+
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		justify-content: center;
+
+		h4 {
+			margin: 0 0 px(24) 0;
+			font-size: px(24);
+			color: $primary;
+			letter-spacing: px(1);
+			width: 40%;
+			line-height: 2;
+		}
+
+	}
+}

@@ -1,0 +1,299 @@
+.mainBanner {
+	display: flex;
+	width: 100%;
+
+	.modalContent{
+		display: flex;
+		width: 100%;
+
+		.modalContainer{
+			display: flex;
+			width: 100%;
+
+			form{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+
+				.textFiled{
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+					align-items: center;
+					width: 70%;
+					margin-bottom: px(24);
+
+					p{
+						font-size: px(14);
+					}
+					input{
+						width: 55%;
+						height: px(46);
+						border: px(1) solid #4daf7c;
+						border-radius: px(6);
+						padding: px(0) px(24);
+					}
+
+				}
+				.createNew{
+					display: flex;
+					width: 100%;
+					flex-direction: row;
+					justify-content: flex-end;
+					a{
+						padding: px(9) px(16);
+						border-radius: px(6);
+						background: $green-500;
+						color: $white;
+
+						&:hover{
+							transition: all ease-in-out 0.2s;
+							background: $green-300;
+							color: $black-400;
+						}
+					}
+				}
+				.subCategory{
+					display: flex;
+					flex-direction: column;
+					width: 100%;
+					padding: px(24);
+					border-bottom: px(1) solid #ccc;
+					margin-bottom: px(24);
+
+					.subCategoryTitle{
+						display: flex;
+						flex-direction: row;
+						justify-content: space-between;
+						align-items: center;
+						width: 100%;
+
+						.textFiledSub{
+							display: flex;
+							flex-direction: row;
+							justify-content: space-between;
+							align-items: center;
+							width: 40%;
+							margin-bottom: px(12 );
+
+							p{
+								font-size: px(14);
+							}
+							input{
+								width: 55%;
+								height: px(46);
+								border: px(1) solid #4daf7c;
+								border-radius: px(6);
+								padding: px(0) px(24);
+							}
+
+						}
+						.deleteSubCat{
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							cursor: pointer;
+							span{
+								padding: px(5);
+								border-radius: 50%;
+								border: px(1) solid #cccccc;
+							}
+						}
+					}
+					.createNewFaq{
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						width: 100%;
+						margin-bottom: px(16);
+
+						a{
+							padding: px(9) px(16);
+							border-radius: px(6);
+							background: $blue-500;
+							color: $white;
+							cursor: pointer;
+
+							&:hover{
+								transition: all ease-in-out 0.2s;
+								background: $blue-300;
+								color: $black-400;
+							}
+						}
+					}
+					.subCategoryFaq{
+						display: flex;
+						flex-direction: column;
+						width: 100%;
+						padding: px(24);
+						border-top: px(1) solid #ccc;
+
+						.faq{
+							display: flex;
+							flex-direction: row;
+							justify-content: space-between;
+							align-items: center;
+							width: 100%;
+
+							.faqContent{
+								display: flex;
+								width: 90%;
+								flex-wrap: wrap;
+								flex-direction: row;
+								justify-content: space-between;
+
+								.textFiledFaq{
+									display: flex;
+									flex-direction: row;
+									justify-content: space-between;
+									align-items: center;
+									width: 47%;
+									margin-bottom: px(24);
+
+									p{
+										font-size: px(14);
+									}
+									input{
+										width: 55%;
+										height: px(46);
+										border: px(1) solid #4daf7c;
+										border-radius: px(6);
+										padding: px(0) px(24);
+									}
+
+								}
+							}
+							.deleteSubCat{
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								cursor: pointer;
+								span{
+									padding: px(5);
+									border-radius: 50%;
+									border: px(1) solid #cccccc;
+								}
+							}
+						}
+					}
+				}
+				.btnSubmit{
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					align-items: center;
+					width: 100%;
+
+					.btn{
+						padding: px(12) px(24);
+						background: $green-600;
+						border-radius: px(6);
+						color: white;
+						cursor: pointer;
+					}
+				}
+			}
+
+			.deleteModal{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+
+				div{
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					align-items: center;
+					width: 70%;
+				}
+				.content{
+					p{
+						font-size: px(14);
+					}
+				}
+				.btnSubmit{
+					.btn{
+						padding: px(12) px(24);
+						margin: px(6) px(12);
+						cursor: pointer;
+						border-radius: px(6);
+						box-shadow: 0 px(3) px(6) 0 rgba(0, 0, 0, 0.16);
+						color: white;
+						&:hover{
+							transition: all ease-in-out 0.3s;
+							opacity: 0.8;
+						}
+
+						&:first-child{
+							background: $red-500;
+						}
+						&:last-child{
+							background: $blue-500;
+						}
+					}
+				}
+			}
+		}
+
+	}
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+
+		.createNew{
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-end;
+			width: 100%;
+
+			a{
+				margin: px(24);
+				padding: px(12);
+				background: $green-500;
+				color: white;
+				cursor: pointer;
+				border-radius: px(12);
+				box-shadow: 0 px(3) px(6) 0 rgba(0, 0, 0, 0.16);
+			}
+		}
+		.tableMainBanner {
+			display: flex;
+			width: 100%;
+
+			.table {
+				width: 100%;
+				border-collapse: collapse;
+
+				thead {
+					tr {
+						th {
+							text-align: left;
+							height: px(46);
+						}
+					}
+				}
+
+				tbody {
+					tr {
+						td {
+							min-height: px(64);
+							&.active{
+								color: $green-500;
+							}
+						}
+
+						&:nth-child(odd) {
+							background: $grey-100;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,282 @@
+.economic {
+	display: flex;
+	position: relative;
+	width: 100%;
+	background: $black-400;
+	margin-top: 80px;
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		padding: px(48) px(0);
+		@include media-breakpoint-down('md'){
+			padding: px(126) 0 px(48) px(0);
+		}
+
+		.header{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
+			@include media-breakpoint-down('md'){
+				padding: px(24);
+
+			}
+
+			h2 {
+				color: $primary;
+				letter-spacing: px(1);
+				margin: 0 0 px(48) 0;
+			}
+
+			p {
+				font-size: px(16);
+				color: $primary;
+				text-align: left;
+				margin: 0;
+				padding: 0;
+			}
+		}
+		.now{
+			margin-bottom: px(48);
+			@include media-breakpoint-down('md'){
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.todayNewsStatus {
+				display: flex;
+				padding: px(24);
+				background: $grey-300;
+				border-radius: px(12);
+				width: max-content;
+				@include media-breakpoint-down('md'){
+					align-items: center;
+				}
+				&.active{
+					& > span{
+						&:first-child{
+							color: $grey-400;
+						}
+						&:last-child{
+							color: $green-500;
+						}
+					}
+				}
+				& > span{
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					font-size: px(16);
+					font-weight: 550;
+					color: $grey-400;
+					margin-right: px(4);
+
+					&:first-child{
+						color: $primary;
+					}
+
+				}
+
+				.switch {
+					position: relative;
+					display: inline-block;
+					width: px(48);
+					height: px(28);
+
+					input {
+						opacity: 0;
+						width: 0;
+						height: 0;
+					}
+
+					.slider {
+						position: absolute;
+						cursor: pointer;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						background-color: $primary;
+						-webkit-transition: .4s;
+						transition: .4s;
+						&.active{
+							background: $green-500;
+						}
+
+						&.active:before{
+							right: px(4);
+							left: auto;
+						}
+
+						&:before{
+							position: absolute;
+							content: "";
+							height: px(21);
+							width: px(21);
+							left: px(4);
+							bottom: px(4);
+							border-radius: 50%;
+							background-color: white;
+							-webkit-transition: .6s;
+							transition: .6s;
+						}
+						&.round{
+							border-radius: px(34);
+						}
+					}
+				}
+			}
+		}
+
+		.economicTable{
+			font-family: iranyekan;
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			direction: rtl;
+			border: px(2) solid $blue-600;
+			border-radius: px(20);
+			overflow: hidden;
+			.economicTableHead{
+				display: flex;
+				flex-direction: row;
+				list-style: none;
+				background: $blue-400;
+				margin: 0;
+				@include media-breakpoint-down('md'){
+					overflow: hidden;
+					verflow: -moz-scrollbars-none;
+					scrollbar-width: none;
+					overflow-y: unset;
+					overflow-x: auto;
+					min-width: 200%;
+				}
+
+				li{
+					height: px(60);
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					font-size: px(14);
+					width: 10%;
+				}
+				.currency{
+					width: 5%;
+				}
+				.title{
+					width: 55%;
+
+				}
+			}
+			.economicTableHead::-webkit-scrollbar{
+				display: none;
+			}
+
+			.economicTableWrapper{
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+				list-style: none;
+				padding: 0;
+				margin: 0;
+
+				.economicTableItem{
+					display: flex;
+					flex-direction: column;
+					width: 100%;
+					cursor: pointer;
+					&:not(:last-of-type){
+						border-bottom: px(1) solid $blue-600;
+					}
+
+					.economicTableItemTitle{
+						display: flex;
+						width: 100%;
+						background: $blue-500;
+						color: $white;
+						margin: 0;
+						font-size: px(16);
+						font-weight: 550;
+						padding: px(12) px(24);
+					}
+
+					.economicTableContent{
+						display: none;
+						flex-direction: column;
+						padding: 0;
+						margin: 0;
+						width: 100%;
+						animation: rotateMenu 400ms ease-in-out forwards;
+						transform-origin: top center;
+
+						@include media-breakpoint-down('md'){
+							overflow: hidden;
+							verflow: -moz-scrollbars-none;
+							scrollbar-width: none;
+							overflow-y: unset;
+							overflow-x: auto;
+						}
+
+						&.active{
+							display: flex;
+						}
+
+						.contentRow{
+							display: flex;
+							flex-direction: row;
+							list-style: none;
+							margin: 0;
+							background: $white;
+							@include media-breakpoint-down('md'){
+								min-width: 200%;
+							}
+
+							li{
+								height: px(60);
+								display: flex;
+								flex-direction: row;
+								align-items: center;
+								font-size: px(14);
+								width: 10%;
+							}
+							.currency{
+								width: 5%;
+							}
+							.title{
+								width: 55%;
+								img	{
+									width: px(24);
+									object-fit: contain;
+									margin: px(0) px(8);
+								}
+							}
+
+						}
+					}
+					.economicTableContent::-webkit-scrollbar{
+						display: none;
+					}
+				}
+			}
+		}
+
+	}
+}
+
+@keyframes rotateMenu {
+	0% {
+		transform: scaleY(0)
+	}
+	80% {
+		transform: scaleY(1.1)
+	}
+	100% {
+		transform: scaleY(1)
+	}
+}

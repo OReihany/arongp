@@ -1,0 +1,145 @@
+.statistical{
+	display: flex;
+	width: 100%;
+	height: 100%;
+	padding: px(48) px(0);
+
+	.container{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 100%;
+
+		.topContent{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			@include media-breakpoint-down('md'){
+				flex-direction: column;
+			}
+
+			.content{
+				display: flex;
+				flex-direction: column;
+
+				h2{
+					color: $black;
+					margin: 0 0 px(48) 0;
+				}
+				p{
+					font-size: px(14);
+					line-height: 2;
+					color: $black;
+					text-align: justify;
+					&:not(:last-of-type){
+						margin: 0 0 px(48) 0;
+					}
+				}
+			}
+			.brand{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				width: px(552);
+				height: 100%;
+				@include media-breakpoint-down('md'){
+					width: 100%;
+				}
+
+
+				img{
+					width: px(552);
+					height: 100%;
+					object-fit: contain;
+					@include media-breakpoint-down('md') {
+						width: 100%;
+						height: 100%;
+						object-fit: contain;
+					}
+
+				}
+			}
+		}
+
+		.centerContent{
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+			height: px(447);
+			position: relative;
+			margin: 0 0 px(48) 0;
+			@include media-breakpoint-down('md'){
+				flex-direction: column;
+				margin: 0;
+			}
+
+			.investor{
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				align-items: center;
+				width: px(443);
+				height: px(235);
+				position: absolute;
+				padding: px(58) px(0);
+				background: url("./static2.png") no-repeat;
+				background-size: cover !important;
+				left: 0;
+				top: 0;
+				@include media-breakpoint-down('md'){
+					width: 100%;
+					position: unset;
+					background-size: 100%;
+					padding: px(36) px(0);
+				}
+
+
+				span{
+					font-size: px(18);
+					color: $primary;
+					font-weight: 700;
+				}
+				p{
+					font-size: px(16);
+					color: $primary;
+					font-weight: 600;
+				}
+
+			}
+			.moneyInvested{
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				align-items: center;
+				width: px(509);
+				height: px(267);
+				position: absolute;
+				padding: px(58) px(0);
+				background: url("./static1.png") no-repeat;
+				background-size: cover !important;
+				right: px(0);
+				bottom: 0;
+				@include media-breakpoint-down('md'){
+					width: 100%;
+					position: unset;
+					background-size: 100%;
+					padding: px(36) px(0);
+				}
+
+				span{
+					font-size: px(18);
+					color: $primary;
+					font-weight: 700;
+				}
+				p{
+					font-size: px(16);
+					color: $primary;
+					font-weight: 600;
+				}
+
+			}
+		}
+	}
+}

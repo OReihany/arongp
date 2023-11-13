@@ -1,0 +1,145 @@
+.cryptoFaq{
+	display: flex;
+	width: 100%;
+	height: 100%;
+	padding: px(48) px(0);
+
+	.container{
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		.title{
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+			justify-content: space-between;
+			align-items: center;
+			background: $grey-300;
+			border-radius: px(8);
+			overflow: hidden;
+			p{
+				width: 50%;
+				font-size: px(16);
+				font-weight: 600;
+				text-align: center;
+				margin: px(0);
+				padding: px(16) px(0);
+				cursor: pointer;
+				&.active{
+					transition: all ease-in-out 0.3s;
+					background: $primary;
+					color: $white;
+				}
+
+			}
+		}
+		.faqContent{
+			display: flex;
+			flex-direction: column;
+			padding: px(24);
+
+			.item{
+				border: px(1) solid $grey-600;
+				border-radius: px(8);
+				overflow: hidden;
+				&:not(:last-of-type){
+					margin-bottom: px(12) ;
+				}
+				.faqTitle{
+					width: 100%;
+					margin: 0;
+					padding: px(16);
+					font-size: px(14);
+					font-weight: 500;
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					cursor: pointer;
+					span{
+						padding: px(8);
+					}
+				}
+				.itemDes{
+					display: none;
+					flex-direction: column;
+					padding: px(16) px(24);
+					justify-content: space-between;
+					background: $grey-300;
+					animation: rotateMenu 400ms ease-in-out forwards;
+					transform-origin: top center;
+
+					&.active{
+						transition: all ease-in-out 0.2s;
+						display: flex;
+					}
+					span{
+						font-size: px(12);
+						font-weight: 450;
+						line-height: 2;
+
+					}
+				}
+			}
+		}
+		.termsAndCondition{
+			display: flex;
+			flex-direction: column;
+			padding: px(24);
+
+			.des1{
+				font-size: px(13);
+				font-weight: 500;
+				color: black;
+				line-height: 2;
+			}
+			.termsItems{
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				padding: px(0) px(12);
+				.item{
+					font-size: px(12);
+					font-weight: 500;
+					color: $black-400;
+					line-height: 2;
+				}
+			}
+		}
+		.termsAndConditionDownload{
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			padding: px(24) 0 0 px(0);
+
+			.titleDownload{
+				font-size: px(14);
+				font-weight: 450;
+				margin-right: px(24);
+			}
+			a{
+				padding: px(12);
+				border-radius: px(6);
+				border: px(1) solid $primary;
+				box-shadow: 0 px(3) px(6) 0 rgba(0, 0, 0, 0.16);
+				&:hover{
+					transition: all ease-in-out 0.2s;
+					background: $primary;
+					color: $white;
+
+				}
+			}
+		}
+	}
+}
+
+@keyframes rotateMenu {
+	0% {
+		transform: scaleY(0)
+	}
+	80% {
+		transform: scaleY(1.1)
+	}
+	100% {
+		transform: scaleY(1)
+	}
+}

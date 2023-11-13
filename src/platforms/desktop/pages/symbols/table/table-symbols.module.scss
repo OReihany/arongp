@@ -1,0 +1,82 @@
+.tableSymbols {
+	verflow: -moz-scrollbars-none;
+	scrollbar-width: none;
+	overflow-y: unset;
+	overflow-x: auto;
+	padding: px(0) px(36);
+	max-height: px(1276);
+	@include media-breakpoint-down('md'){
+		padding: 0;
+	}
+
+	table {
+		width: 100%;
+		font-size: px(16);
+		white-space: nowrap;
+		border-collapse: collapse;
+		margin: 0;
+		table-layout: fixed;
+		position: relative;
+		@include media-breakpoint-down('md'){
+			width: 200%;
+		}
+
+		th, td {
+			height: px(60);
+		}
+
+		thead {
+			background: $white;
+			font-size: px(12);
+			font-weight: 600;
+		}
+
+		tbody {
+			.contentRow {
+				td {
+					.trade{
+						display: flex;
+						padding: px(10);
+						justify-content: center;
+						border: 1px solid #048200;
+						color: $white;
+						border-radius: px(8);
+						background: #048200;
+						font-weight: 700;
+					}
+					text-align: center;
+					font-size: px(12);
+					&.red{
+						color: $red-400;
+					}
+					&.red:before{
+						content: '\25BC' !important;
+						color: $red-400;
+					}
+					&.white{
+						color: $grey-500;
+					}
+					&.white:before{
+						content: ' ' !important;
+						color: $grey-500;
+					}
+					&.green{
+						color: $green-500;
+					}
+					&.green:before{
+						content: '\25B2' !important;
+						color: $green-500;
+					}
+				}
+				&.active {
+					background: $grey-100;
+				}
+			}
+
+		}
+	}
+}
+
+.tableSymbols::-webkit-scrollbar {
+	display: none;
+}

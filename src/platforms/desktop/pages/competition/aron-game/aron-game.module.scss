@@ -1,0 +1,129 @@
+.aronGame{
+	display: flex;
+	width: 100%;
+	padding: px(48) 0;
+	background: #fafafa;
+
+	.modalContent {
+		display: flex;
+		width: 100%;
+
+		.modalContainer {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+
+			p {
+				line-height: 1.5;
+			}
+
+			.table {
+				display: flex;
+				justify-content: center;
+				width: 100%;
+
+				table {
+					width: 70%;
+					border-collapse: collapse;
+
+					thead {
+						tr {
+							background: $grey-300;
+
+							th {
+								height: px(42);
+							}
+						}
+					}
+
+					tbody {
+						tr {
+							td {
+								height: px(42);
+								text-align: center;
+							}
+
+							&:nth-child(2n) {
+								background: $grey-200;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.container{
+		display: flex;
+		width: 100%;
+		flex-direction: column;
+
+		h2{
+			color: $primary;
+		}
+		.aronGameImg{
+			display: flex;
+			width: 100%;
+
+			img{
+
+				width: 100%;
+				object-fit: contain;
+			}
+
+			.landscape{
+				display: flex;
+			}
+
+			.portrait{
+				display: none;
+			}
+			@include media-breakpoint-down('md'){
+
+				.landscape{
+					display: none;
+				}
+
+				.portrait{
+					display: flex;
+				}
+			}
+		}
+
+		.btn{
+			display: flex;
+			flex-direction: row;
+			margin-top: px(24);
+			align-items: center;
+			width: 100%;
+			@include media-breakpoint-down('md'){
+				flex-direction: column;
+				p{
+					padding-right: px(0);
+				}
+				.btnClick{
+					margin-left: px(0);
+				}
+			}
+
+			p{
+				font-size: px(14);
+				font-weight: 550;
+				color: $grey-500;
+				padding-right: px(24);
+
+			}
+
+			.btnClick{
+				padding: px(12) px(24);
+				border-radius: px(6);
+				background: $primary;
+				color: $white;
+				box-shadow: 0 px(3) px(6) 0 rgba(0, 0, 0, 0.12);
+				margin-left: px(12);
+				cursor: pointer;
+
+			}
+		}
+	}
+}

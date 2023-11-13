@@ -1,0 +1,98 @@
+.tradingPlatform {
+	display: flex;
+	background: url('trading-platform-background.png') no-repeat;
+	background-size: cover !important;
+	height: 100%;
+	padding: px(48) px(0);
+	//height: calc(100vh - #{px(128)});
+	//height: calc(var(--vh, 1vh) * 100 - #{px(128)});
+	@include media-breakpoint-down('md') {
+		height: 100%;
+		background-size: cover !important;
+	}
+
+	.container {
+		display: flex;
+		flex-direction: row;
+		@include media-breakpoint-down('md') {
+			flex-direction: column;
+		}
+
+		.content {
+			display: flex;
+			flex-direction: column;
+			flex: 1 1 100%;
+			justify-content: center;
+			color: $black-400;
+
+			h2 {
+				margin: 0 0 px(48) 0;
+				padding-right: 30%;
+				@include media-breakpoint-down('md') {
+					padding-right: px(0);
+				}
+			}
+
+			p {
+				font-size: px(14);
+				margin: 0 0 px(48) 0;
+				opacity: 0.7;
+				text-align: justify;
+				line-height: 1.5;
+				@include media-breakpoint-down('md') {
+					line-height: 2;
+				}
+			}
+
+			.platformIcons {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				height: px(100);
+
+				@include media-breakpoint-down('md') {
+					justify-content: center;
+				}
+
+				.platformIcon {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					background: $primary;
+					border-radius: 50%;
+					width: px(46);
+					height: px(46);
+
+					&:not(last-child) {
+						margin-right: px(24);
+					}
+
+					img {
+						width: px(32);
+						height: px(32);
+					}
+				}
+
+
+			}
+		}
+
+		.preview {
+			display: flex;
+			flex-direction: column;
+			flex: 1 1 100%;
+			justify-content: center;
+			padding-left: px(32);
+
+			img {
+				height: px(455);
+				object-fit: contain;
+				@include media-breakpoint-down('md') {
+					width: 100%;
+					object-fit: contain;
+				}
+			}
+		}
+	}
+}

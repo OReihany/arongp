@@ -1,0 +1,134 @@
+.leaderBoard{
+	display: flex;
+	background: url("./yaldaBg.jpg") no-repeat;
+	background-size: cover !important;
+	height: 100%;
+	padding: px(48) 0;
+	@include media-breakpoint-down('md'){
+		height: 100%;
+		background: url("./yaldaBgMob.jpg") no-repeat;
+	}
+	.container{
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		.leaderBoardTitle{
+			text-align: center;
+			font-size: px(30);
+			color: $primary;
+			font-weight: 600;
+			margin: px(0) 0 px(48) 0;
+		}
+		.leaderDescription{
+			font-size: 18px;
+			line-height: 2;
+			color: aliceblue;
+		}
+		.leaderBoardContentWrapper{
+			display: flex;
+			flex-direction: row;
+			margin-top: px(48);
+			@include media-breakpoint-down('md'){
+				flex-direction: column;
+				align-items: center;
+			}
+			.leaderBoardContentRanks{
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: row;
+				justify-content: space-between;
+				min-height: 100%;
+				width: 100%;
+				@include media-breakpoint-down('md'){
+					flex-direction: column;
+					flex-wrap: nowrap;
+				}
+				.leaderBoardContentRank{
+					display: flex;
+					flex-direction: row;
+					width: 47%;
+					height: px(76);
+					border: 1px solid $grey-200;
+					border-radius: px(12);
+					overflow: hidden;
+					background-color: white;
+					&:not(:last-of-type){
+						margin-bottom: px(24);
+					}
+					@include media-breakpoint-down('md'){
+						width: 100%;
+						&:not(:last-of-type) {
+							margin-bottom: px(24);
+						}
+					}
+					.rankMedal{
+						display: flex;
+						width: px(100);
+						justify-content: center;
+						align-items: center;
+
+						img{
+							width: 100%;
+							object-fit: contain;
+						}
+
+					}
+					.content{
+						display: flex;
+						flex-direction: row;
+						justify-content: space-around;
+						width: 100%;
+						h4{
+							margin: 0;
+							font-size: px(15);
+							color: $grey-600;
+							font-weight: 300;
+
+						}
+						p{
+							margin: 0;
+							font-size: px(21);
+							font-weight: 700;
+							color: $grey-500;
+							@include media-breakpoint-down('md'){
+								font-size: px(14);
+							}
+							b{
+								font-size: px(12);
+								font-weight: 400;
+								color: $grey-600;
+							}
+						}
+						.userId{
+							display: flex;
+							flex-direction: column;
+							align-items: center;
+							justify-content: center;
+
+						}
+						.tradeVolume{
+							display: flex;
+							flex-direction: column;
+							align-items: center;
+							justify-content: center;
+
+						}
+						.benefit{
+							display: flex;
+							flex-direction: column;
+							align-items: center;
+							justify-content: center;
+							p{
+								color: $green-500;
+							}
+						}
+					}
+				}
+
+			}
+			.leaderBoardContentRanks::-webkit-scrollbar {
+				display: none;
+			}
+		}
+	}
+}

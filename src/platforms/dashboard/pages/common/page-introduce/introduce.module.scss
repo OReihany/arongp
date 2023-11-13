@@ -1,0 +1,18 @@
+.introduce{
+	display: flex;
+	width: 100%;
+	position: relative;
+	top: 0;
+	right: 0;
+
+	.container{
+		display: flex;
+		width: 100%;
+
+		h1{
+			color: $primary;
+			border-bottom: px(2) solid $primary;
+		}
+
+	}
+}

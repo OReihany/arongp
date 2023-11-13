@@ -1,0 +1,88 @@
+.modal{
+	display: none;
+
+	&.active{
+		display: flex;
+		transition: all ease-in-out 0.4s;
+	}
+
+	.container{
+		display: flex;
+		flex-direction: column;
+		position: fixed;
+		background: $white;
+		top: 5%;
+		left: 5%;
+		right: 5%;
+		bottom: 5%;
+		height: 80vh;
+		width: 90%;
+		z-index: 1000;
+		box-shadow: 0 px(3) px(20) 0 rgba(0, 0, 0, 0.42);
+
+		.modalContent{
+			display: flex;
+			flex-direction: column;
+			height: 85%;
+			padding: px(24);
+			overflow: hidden;
+			overflow-x: unset;
+			overflow-y: auto;
+
+
+			.title{
+				font-size: px(24);
+				font-weight: 600;
+				color: $primary;
+
+			}
+			.modalContentWrapper{
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+				.content{
+					width: 100%;
+
+					h5{
+						font-size: px(18);
+						color: $black;
+						margin: px(12) px(8) px(12) px(0);
+						font-weight: 600;
+					}
+					p{
+						color: $grey-500;
+						font-size: px(14);
+						line-height: 1.5;
+						text-align: justify;
+					}
+				}
+			}
+		}
+		.modalFooter{
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			height: 15%;
+			padding-right: px(24);
+			border-top: px(1) solid $grey-400;
+			.closeModal{
+				display: flex;
+				align-items: center;
+				height: 60%;
+				padding: px(0) px(24);
+				border: px(1) solid $black-200;
+				font-size: px(14);
+				font-weight: 550;
+				cursor: pointer;
+				border-radius: px(6);
+				color: $grey-500;
+				&:hover{
+					background: $red-200;
+					color: $red-500;
+					border: px(1) solid $red-600;
+					transition: all ease-in-out 0.3s;
+				}
+			}
+		}
+	}
+}

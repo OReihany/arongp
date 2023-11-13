@@ -1,0 +1,40 @@
+.tableMenu {
+	display: flex;
+	width: 100%;
+	padding: px(48) px(0) px(12) px(0);
+
+	.container {
+		display: flex;
+		flex-direction: column;
+
+		.leaderBoardMenu {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+			padding: px(0) px(120);
+			border-bottom: px(1) solid $grey-300;
+			@include media-breakpoint-down('md') {
+				padding: px(0);
+			}
+
+			.leaderBoardMenuItem {
+				font-size: px(16);
+				color: $grey-400;
+				list-style: none;
+				padding: px(12) px(46);
+				cursor: pointer;
+				@include media-breakpoint-down('md') {
+					padding: px(16);
+				}
+
+				&.active {
+					border-bottom: 2px solid $primary;
+					color: $primary;
+				}
+			}
+		}
+	}
+
+}

@@ -1,0 +1,73 @@
+.borrow{
+	display: flex;
+	width: 100%;
+	height: 100%;
+	padding: px(48) px(0);
+	background: $black-300;
+
+	.container{
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		h3{
+			text-align: center;
+			color: $primary;
+			margin: 0 0 px(48) 0;
+		}
+		.cards{
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+			justify-content: space-between;
+			@include media-breakpoint-down('md'){
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.card{
+				display: flex;
+				flex-direction: column;
+				width: 20%;
+				height: 100%;
+				border-radius: px(12);
+				box-shadow: 0 px(3) px(6) 0 rgba(0, 0, 0, 0.52);
+				background: $white;
+				overflow: hidden;
+				@include media-breakpoint-down('md'){
+					width: 80%;
+					&:not(:last-of-type){
+						margin-bottom: px(48);
+					}
+				}
+
+				img{
+					width: 100%;
+					height: px(197);
+					object-fit: cover;
+				}
+				p{
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					font-size: px(16);
+					font-weight: 550;
+					text-align: center;
+					padding:  px(0) px(12);
+					height: px(48);
+					margin: 0;
+				}
+				span{
+					line-height: 2;
+					font-size: px(12);
+					font-weight: 500;
+					color: $black-400;
+					height: px(262);
+					overflow: hidden;
+					padding: px(0) px(12);
+				}
+			}
+		}
+	}
+}

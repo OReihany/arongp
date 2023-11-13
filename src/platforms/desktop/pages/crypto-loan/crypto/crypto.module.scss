@@ -1,0 +1,149 @@
+.paymentMethods{
+	display: flex;
+	align-items: center;
+	height: 100%;
+	padding: px(48) px(0);
+	background: $grey-100;
+	.container{
+		display: flex;
+		align-items: center;
+		flex: 1 1 auto;
+		height: 100%;
+
+		.paymentMethodsContent{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			width: 100%;
+			position: relative;
+
+			.leftRightArrow{
+				position: absolute;
+				display: flex;
+				height: 100%;
+				z-index: 5;
+				bottom: px(32);
+				align-items: flex-end;
+				@include media-breakpoint-down('md'){
+					display: none;
+				}
+
+				&:first-child{
+					left: px(-36);
+					img{
+						transform: rotate(90deg);
+					}
+				}
+				&:last-child{
+					right: px(-36);
+					img{
+						transform: rotate(-90deg);
+					}
+				}
+
+				img{
+					width: px(24);
+					height: px(24);
+					object-fit: contain;
+					cursor: pointer;
+
+				}
+			}
+
+			.paymentMethodsTitle{
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+				align-items: center;
+				justify-content: center;
+				h3{
+					margin: 0 0 px(48) 0;
+					padding: 0;
+					text-align: center;
+
+					@include media-breakpoint-down('md'){
+						font-size: px(18);
+					}
+				}
+
+			}
+			.paymentMethodsIcons{
+				display: flex;
+				width: 100%;
+				overflow: hidden;
+				verflow: -moz-scrollbars-none;
+				scrollbar-width: none;
+				overflow-y: unset;
+				overflow-x: scroll;
+
+				.paymentMethodsIcon{
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+					width: 100%;
+					min-width: 250%;
+					
+					.cryptoIcon{
+						display: flex;
+						position: relative;
+						cursor: pointer;
+						@include media-breakpoint-down('md'){
+							margin-right: px(16);
+						}
+						&:after{
+							content: "";
+							position: absolute;
+							top: 0;
+							left: 0;
+							width: 100%;
+							height: 0;
+							background: rgba(0,0,0,.65);
+						}
+						&:hover{
+							&:after{
+								transition: all ease-in-out 0.3s;
+								height: 100%;
+							}
+
+							p{
+								transition: all ease-in-out 0.3s;
+								height: 100%;
+							}
+						}
+
+						img{
+							height: px(75);
+							object-fit: contain;
+							@include media-breakpoint-down('md'){
+								height: px(64);
+							}
+						}
+						p{
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							position: absolute;
+							top: 0;
+							left: 0;
+							height: 0;
+							width: 100%;
+							margin: 0;
+							color: $primary;
+							z-index: 10;
+							font-size: px(14);
+							font-weight: 550;
+							overflow: hidden;
+							text-align: center;
+						}
+					}
+				}
+			}
+			.paymentMethodsIcons::-webkit-scrollbar{
+				display: none;
+			}
+
+
+		}
+
+	}
+}

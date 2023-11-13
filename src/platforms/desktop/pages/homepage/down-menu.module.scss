@@ -1,0 +1,100 @@
+.mainLayout {
+	display: flex;
+	flex-direction: column;
+	height: px(64);
+	background: $black;
+	color: $white;
+	z-index: 2;
+
+	.container {
+		display: flex;
+		flex: 1 1 auto;
+		.menuGroup {
+			display: flex;
+
+			flex: 1 1 auto;
+			justify-content: space-between;
+
+			.branding {
+				display: flex;
+				align-items: center;
+				img {
+					height: px(36);
+				}
+			}
+
+			.menuItem {
+				position: relative;
+				display: flex;
+				cursor: pointer;
+				&:not(:last-of-type) {
+					margin-right: px(12);
+				}
+				.menuItemSubmenu {
+					display: none;
+					flex-direction: column;
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%);
+					top: 100%;
+					background: $black;
+					min-width: px(220);
+					padding: px(12) 0;
+					.subMenuItem {
+						display: flex;
+						padding: px(12) px(24);
+
+						&.subMenuItemActive {
+							background: $primary;
+						}
+
+						&:hover {
+								background: $primary;
+						}
+					}
+				}
+				.menuItemContent {
+					display: flex;
+					align-items: center;
+					padding: 0 px(12);
+					font-size: 16px;
+					i {
+						display: none;
+					}
+				}
+				&.menuItemLanguage {
+						text-transform: uppercase;
+				}
+				&.menuItemButton {
+					align-items: center;
+					.menuItemContent {
+						background: $primary;
+						height: px(36);
+						padding: 0 px(24);
+						border-radius: px(10);
+						font-size: px(14);
+					}
+				}
+
+				&.menuItemButtonOutline {
+					.menuItemContent {
+						background: transparent;
+						box-shadow: 0 0 0 2px $primary;
+						color: $primary;
+					}
+				}
+
+				&.menuItemWithSubmenu {
+					.menuItemContent i {
+						display: flex;
+					}
+					&:hover {
+						.menuItemSubmenu {
+							display: flex;
+						}
+					}
+				}
+			}
+		}
+	}
+}

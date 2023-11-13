@@ -1,0 +1,56 @@
+.rules{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: px(821);
+	background: url("./rules.png") no-repeat;
+	background-size: cover !important;
+	@include media-breakpoint-down('md'){
+		height: 100%;
+		padding: px(24) px(0);
+	}
+
+	.container{
+		display: flex;
+		width: 100%;
+
+		.rulesContent{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			width: 100%;
+			border-radius: px(24);
+			overflow: hidden;
+			background: $white;
+			box-shadow: 0 px(3) px(6) 0 rgba(0, 0, 0, 0.16);
+
+			img{
+				width: 100%;
+				object-fit: cover;
+			}
+
+			.content{
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				padding: px(25) px(46) px(46) px(46);
+
+				h5{
+					font-size: px(20);
+					font-weight: 600;
+					color: $black-400;
+				}
+
+				p{
+					font-size: px(16);
+					font-weight: 500;
+					line-height: 2;
+					color: $black-400;
+					margin: 0;
+				}
+			}
+		}
+	}
+}

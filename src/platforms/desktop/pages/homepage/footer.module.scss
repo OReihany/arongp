@@ -1,0 +1,262 @@
+.footer {
+	display: flex;
+	background-color: $black-200;
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		height: 100%;
+		margin-bottom: px(12);
+		.footerContent{
+			display: flex;
+			flex-direction: row;
+			height: 100%;
+			margin-bottom: px(24);
+			@include media-breakpoint-down('md'){
+				flex-direction: column;
+			}
+			.footerDown {
+				display: flex;
+				flex-direction: column;
+				margin-top: px(61);
+				height: 100%;
+				color: $white;
+				font-size: px(16);
+				width: 50%;
+				@include media-breakpoint-down('md'){
+					width: 100%;
+				}
+
+				p {
+					text-align: justify;
+					line-height: 1.5;
+					font-size: px(14);
+					margin: 0;
+					&:not(:last-of-type){
+						padding-bottom: px(24);
+					}
+
+					span {
+						font-size: px(16);
+						font-weight: 550;
+						color: $primary;
+					}
+					a{
+						color: #70a9ef;
+					}
+				}
+			}
+			.footerTop {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				width: 50%;
+				margin-top: px(62);
+				padding-left: px(24);
+				@include media-breakpoint-down('md') {
+					width: 100%;
+					margin-bottom: px(0);
+					padding-left: px(0);
+				}
+
+				.platForm{
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+					align-items: center;
+					border-bottom: px(24);
+					border-bottom: px(1) solid $white;
+					h4{
+						font-size: px(16);
+						color: $grey-400;
+						margin: 0;
+					}
+					@include media-breakpoint-down('md'){
+						margin-bottom: px(24);
+					}
+
+					.platFormIcon{
+						display: flex;
+						align-items: center;
+						width: px(46);
+						height: px(46);
+						border-radius: 50%;
+						justify-content: center;
+
+						svg path{
+							fill: $white;
+						}
+						.platFormSvg{
+							width: px(24);
+							height: px(24);
+						}
+
+						&:not(last-of-type){
+							margin-right: px(16);
+						}
+					}
+				}
+				.footerTopCategory {
+					display: flex;
+					flex-direction: column;
+					margin-top: px(12);
+					//@include media-breakpoint-down('md'){
+					//	display: none;
+					//}
+
+
+					h4 {
+						font-size: px(14);
+						color: $primary;
+						margin: 0;
+						@include media-breakpoint-down('md') {
+							cursor: pointer;
+						}
+					}
+
+					.footerTopSubCategory {
+						display: flex;
+						flex-direction: column;
+						height: 100%;
+						line-height: 2;
+						padding: 0;
+						@include media-breakpoint-down('md') {
+							padding-left: px(24);
+
+							&.active {
+								display: flex;
+							}
+
+						}
+
+						.footerTopSubCategoryItem {
+							display: flex;
+							flex-direction: row;
+							align-items: center;
+							cursor: pointer;
+							list-style: none;
+							font-size: px(14);
+							color: $grey-200;
+							&:not(:first-of-type) {
+								margin-top: px(16);
+							}
+
+							i {
+								margin-right: px(10);
+								font-size: px(16);
+							}
+						}
+					}
+
+					&:last-of-type {
+						.footerTopSubCategory {
+							justify-content: start;
+
+							@include media-breakpoint-down('md') {
+								&.active {
+									display: flex;
+								}
+							}
+
+						}
+					}
+				}
+				.navigationFooter{
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+					margin: px(12) px(0);
+					@include media-breakpoint-down('md'){
+						display: none;
+					}
+				}
+				.footerMiddle {
+					display: flex;
+					flex-direction: column;
+					width: 100%;
+					justify-content: center;
+					@include media-breakpoint-down('md'){
+						display: none;
+					}
+
+					.footerMiddleWrapper {
+						display: flex;
+						flex-direction: row;
+						justify-content: space-between;
+						align-items: center;
+						border-top: px(1) solid $white;
+						border-bottom: px(1) solid $white;
+						padding: px(24) px(0);
+						@include media-breakpoint-down('md'){
+							display: none;
+						}
+
+						.footerMiddleLogo {
+							width: 60%;
+
+							img {
+								width: 80%;
+								object-fit: contain;
+							}
+						}
+
+						.footerMiddleIcons {
+							display: flex;
+							flex-direction: row;
+							justify-content: space-between;
+							width: 40%;
+
+							img {
+								width: px(36);
+								object-fit: contain;
+								cursor: pointer;
+							}
+						}
+					}
+				}
+
+			}
+		}
+		.copyRight{
+			border-top: px(1) solid $grey-300;
+			font-size: px(14);
+			font-weight: 550;
+			color: $white;
+			width: 100%;
+			text-align: center;
+		}
+
+		.scrollUp {
+			position: absolute;
+			bottom: px(45);
+			right: px(-140);
+			width: px(95);
+			height: px(95);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			box-shadow: 0 2px 15px 0 rgba(190, 168, 48, 0.4);
+			border-radius: px(20);
+			cursor: pointer;
+			@include media-breakpoint-down('md'){
+				bottom: px(12);
+				right: px(12);
+			}
+
+			span {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				font-size: px(48);
+				color: $primary;
+				img{
+					width: 70%;
+					object-fit: contain;
+				}
+			}
+		}
+
+	}
+}

@@ -1,0 +1,70 @@
+.lessons{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	min-height: px(821);
+	background: url("./lessons-back.png") no-repeat;
+	background-size: cover !important;
+	padding-bottom: px(48);
+
+	.container{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 100%;
+
+		p{
+			font-size: px(14);
+			line-height: 2;
+			font-weight: 500;
+			color: $black;
+
+			&:first-child{
+				margin-top: px(64);
+			}
+		}
+
+		.lessonsWrapper{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			width: 100%;
+			@include media-breakpoint-down('md'){
+				flex-direction: column;
+			}
+
+			.lessonsItem{
+				display: flex;
+				flex-direction: column;
+				width: px(292);
+				height: px(292);
+				overflow: hidden;
+				border-radius: px(20);
+				margin-bottom: px(76);
+				@include media-breakpoint-down('md'){
+					width: 100%;
+				}
+
+				.lessonVideo{
+					width: 100%;
+					height: 100%;
+				}
+
+				p{
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					width: 100%;
+					font-size: px(12);
+					line-height: 1.5;
+					font-weight: 500;
+					color: $black-400;
+					height: px(80);
+				}
+			}
+		}
+	}
+}

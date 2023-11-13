@@ -1,0 +1,174 @@
+.previousBonus {
+	display: flex;
+	width: 100%;
+	min-height: px(992);
+	background: url("previous-bonus.png") repeat-y;
+	background-size: cover !important;
+	height: 100%;
+	position: relative;
+	&:after{
+		content: "";
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.8);
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.container {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		position: relative;
+		text-align: center;
+		z-index: 100;
+
+		.leftArrow, .rightArrow{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			z-index: 10;
+			height: 100%;
+			width: px(48);
+
+			i {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				cursor: pointer;
+				border-radius: 50%;
+				border: px(2) solid $primary;
+				color: $primary;
+				width: px(32);
+				height: px(32);
+			}
+		}
+		.leftArrow{
+			left: 0;
+		}
+		.rightArrow{
+			right: 0;
+		}
+
+
+		.previousBonusWrapper {
+			display: flex;
+			flex-direction: row;
+			white-space: nowrap;
+			align-items: center;
+			padding: 0;
+			overflow: hidden;
+			overflow-y: unset;
+			overflow-x: auto;
+			verflow: -moz-scrollbars-none;
+			scrollbar-width: none;
+			white-space: nowrap;
+			width: 100%;
+			height: 100%;
+
+			.previousBonusTimeLine {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				width: 100%;
+				padding: px(0) px(48);
+
+				.previousBonusItem {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					width: px(350);
+					margin-right: px(48);
+
+					&:hover{
+						.previousBonusItemContent{
+							.subtitle{
+								transition: all ease-in-out 0.4s;
+								display: flex;
+							}
+						}
+					}
+
+					&:not(:nth-of-type(2n+1)){
+						transform: translateY(-50%);
+					}
+					&:not(:nth-of-type(2n)){
+						transform: translateY(50%) rotate(-180deg);
+
+						.previousBonusItemContent{
+							transform: rotate(-180deg);
+						}
+					}
+
+					.previousBonusItemContent {
+						position: relative;
+						width: px(350);
+						height: px(292);
+						border-radius: px(20);
+						overflow: hidden;
+						box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+
+						img {
+							width: 100%;
+							height: 100%;
+							border-radius: px(20);
+							object-fit: cover;
+						}
+
+						.subtitle {
+							display: none;
+							flex-direction: column;
+							justify-content: center;
+							align-items: center;
+							width: 100%;
+							height: 100%;
+							position: absolute;
+							bottom: 0;
+							padding: px(12) px(24);
+							background: rgba(0, 0, 0, 0.8);
+							border-radius: px(20);
+							cursor: pointer;
+
+							span{
+								font-size: px(16);
+								font-weight: 550;
+								color: $white;
+								width: 100%;
+								word-break: break-word;
+								white-space: normal;
+							}
+							p {
+								font-size: px(12);
+								color: $white;
+								width: 100%;
+								word-break: break-word;
+								white-space: normal;
+							}
+						}
+
+					}
+					.dateTime{
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
+						writing-mode:vertical-lr;
+						font-size: px(14);
+						color: $white;
+						margin: px(12);
+					}
+				}
+			}
+		}
+
+		.previousBonusWrapper::-webkit-scrollbar {
+			display: none;
+		}
+
+	}
+}

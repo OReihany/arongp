@@ -1,0 +1,192 @@
+$blue-600: #071b31;
+$blue-500: #0E4E88;
+$blue-400: #177ddc;
+$blue-300: #83BBEC;
+$blue-200: #CAE2F7;
+$blue-100: #EDF5FC;
+$green-500: #008f4a;
+$green-200: #c2ffe1;
+$green-100: #ebfff5;
+$green-600: #002915;
+$green-400: #00e676;
+$green-300: #85ffc4;
+$grey-700: #111418;
+$grey-600: #707070;
+$grey-500: #435160;
+$grey-400: #95a5b6;
+$grey-300: #cfd5de;
+$grey-100: #f3f5f7;
+$grey-200: #e7eaee;
+$red-600: #29000a;
+$red-500: #a30026;
+$red-200: #ffbebe;
+$red-300: #ff7e9d;
+$red-400: #ff0a43;
+$red-100: #ffebf0;
+
+$white: #ffffff;
+$black: #111418;
+$black-200: #27272a;
+$black-300: #1f1f22;
+$black-400: #161619;
+
+
+$yellow-600: #615619;
+$yellow-500: #A39129;
+$yellow-400: #a28908;
+$yellow-300: #DACA6C;
+$yellow-200: #EAE2AE;
+$yellow-100: #F5F3E0;
+
+
+$primary: $yellow-400;
+
+@function color-yiq($color, $dark: $black, $light: $white) {
+	$r: red($color);
+	$g: green($color);
+	$b: blue($color);
+	$yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
+	@if ($yiq >= 150) {
+		@return $dark;
+	} @else {
+		@return $light;
+	}
+}
+
+@mixin full-width($property:'width') {
+	#{$property}: 100vw;
+	#{$property}: calc(var(--vw, 1vw) * 100);
+}
+
+@mixin full-height($property: 'height') {
+	#{$property}: 100vh;
+	#{$property}: calc(var(--vh, 1vh) * 100);
+}
+
+$grid-gutter-width: 48px;
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 1024px,
+	xl: 1280px,
+	xxl: 1440px,
+);
+
+$vw-ratio: 100vw / map_get($grid-breakpoints, 'xxl');
+
+@function px($px) {
+	@return #{$px / 14}rem;
+}
+
+@function vw( $target-font-size ) {
+	@return $target-font-size * $vw-ratio;
+}
+
+$container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1140px,
+);
+
+@mixin make-container($gutter: $grid-gutter-width) {
+	width: 100%;
+	padding-right: $gutter / 2;
+	padding-left: $gutter / 2;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+@mixin make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints) {
+	@each $breakpoint, $container-max-width in $max-widths {
+			@include media-breakpoint-up($breakpoint, $breakpoints) {
+				max-width: $container-max-width;
+			}
+	}
+
+	@include media-breakpoint-up('xl', $breakpoints) {
+		max-width: px(1140);
+	}
+}
+
+@function breakpoint-next($name, $breakpoints: $grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
+	$n: index($breakpoint-names, $name);
+	@return if($n != null and $n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+}
+
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+	$min: map-get($breakpoints, $name);
+	@return if($min != 0, $min, null);
+}
+
+@function breakpoint-max($name, $breakpoints: $grid-breakpoints) {
+	$next: breakpoint-next($name, $breakpoints);
+	@return if($next, breakpoint-min($next, $breakpoints) - 0.02, null);
+}
+
+@function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
+	@return if(breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");
+}
+
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+	$min: breakpoint-min($name, $breakpoints);
+	@if $min {
+		@media (min-width: $min) {
+			@content;
+		}
+	} @else {
+		@content;
+	}
+}
+
+@mixin media-breakpoint-down($name, $breakpoints: $grid-breakpoints) {
+	$max: breakpoint-max($name, $breakpoints);
+	@if $max {
+		@media (max-width: $max) {
+			@content;
+		}
+	} @else {
+		@content;
+	}
+}
+
+@mixin media-breakpoint-between($lower, $upper, $breakpoints: $grid-breakpoints) {
+	$min: breakpoint-min($lower, $breakpoints);
+	$max: breakpoint-max($upper, $breakpoints);
+
+	@if $min != null and $max != null {
+		@media (min-width: $min) and (max-width: $max) {
+			@content;
+		}
+	} @else if $max == null {
+		@include media-breakpoint-up($lower, $breakpoints) {
+			@content;
+		}
+	} @else if $min == null {
+		@include media-breakpoint-down($upper, $breakpoints) {
+			@content;
+		}
+	}
+}
+
+@mixin media-breakpoint-only($name, $breakpoints: $grid-breakpoints) {
+	$min: breakpoint-min($name, $breakpoints);
+	$max: breakpoint-max($name, $breakpoints);
+
+	@if $min != null and $max != null {
+		@media (min-width: $min) and (max-width: $max) {
+			@content;
+		}
+	} @else if $max == null {
+		@include media-breakpoint-up($name, $breakpoints) {
+			@content;
+		}
+	} @else if $min == null {
+		@include media-breakpoint-down($name, $breakpoints) {
+			@content;
+		}
+	}
+}

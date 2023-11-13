@@ -1,0 +1,107 @@
+.consecutiveLoss {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding: px(36);
+
+	.title {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 24px;
+
+		p {
+			line-height: 2;
+		}
+	}
+
+	.notice {
+		display: flex;
+		margin: px(24) px(0);
+		width: 100%;
+
+		h3 {
+			width: 100%;
+			padding: px(12);
+			color: $yellow-500;
+			background: $yellow-300;
+			border-radius: px(12);
+			box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+		}
+	}
+
+	.consecutiveLossContent {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+
+
+		.consecutiveLossWrapper {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+
+			.inputField {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-content: center;
+				margin: px(12) 0;
+				width: 100%;
+
+				&.grey {
+					input {
+						background: $grey-300;
+					}
+				}
+
+				&.yellow {
+					input {
+						background: $yellow-200;
+						cursor: no-drop;
+					}
+				}
+
+				&.red {
+					input {
+						background: $red-300;
+						cursor: no-drop;
+					}
+				}
+
+				&.blue {
+					input {
+						background: $blue-400;
+						color: $white;
+						cursor: no-drop;
+					}
+				}
+
+				&.green {
+					input {
+						background: $green-500;
+						color: $black;
+						cursor: no-drop;
+					}
+				}
+
+				p {
+					display: flex;
+					align-items: center;
+					width: 30%;
+					font-size: px(15);
+					margin: 0;
+				}
+
+				input {
+					height: px(36);
+					padding: px(12);
+					border: 1px solid $grey-300;
+					border-radius: px(6);
+					width: 65%;
+				}
+			}
+
+		}
+	}
+}

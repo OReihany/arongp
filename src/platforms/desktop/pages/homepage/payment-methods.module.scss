@@ -1,0 +1,179 @@
+$animationSpeed: 30s;
+
+@keyframes scrollFa {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(calc(250px * 8))
+	}
+}
+
+@keyframes scroll {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(calc(-250px * 8))
+	}
+}
+
+.paymentMethods {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	padding: px(48) 0;
+
+	.container {
+		display: flex;
+		align-items: center;
+		flex: 1 1 auto;
+		height: 100%;
+
+		.paymentMethodsContent {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			width: 100%;
+			position: relative;
+
+			.leftRightArrow {
+				position: absolute;
+				display: flex;
+				height: 100%;
+				z-index: 5;
+				bottom: px(32);
+				align-items: flex-end;
+				@include media-breakpoint-down('md') {
+					display: none;
+				}
+
+				&:first-child {
+					left: px(-36);
+
+					img {
+						transform: rotate(90deg);
+					}
+				}
+
+				&:last-child {
+					right: px(-36);
+
+					img {
+						transform: rotate(-90deg);
+					}
+				}
+
+				img {
+					width: px(24);
+					height: px(24);
+					object-fit: contain;
+					cursor: pointer;
+
+				}
+			}
+
+			.paymentMethodsTitle {
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+				align-items: center;
+				justify-content: center;
+
+				h2 {
+					margin: 0 0 px(48) 0;
+					padding: 0;
+				}
+
+				p {
+					margin: 0 0 px(48) 0;
+					font-size: px(14);
+				}
+			}
+
+			.paymentMethodsIcons, .paymentMethodsIconsFa {
+				display: flex;
+				width: 100%;
+				overflow: hidden;
+				verflow: -moz-scrollbars-none;
+				scrollbar-width: none;
+				overflow-y: unset;
+				overflow-x: scroll;
+
+				.paymentMethodsIcon {
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+					width: 100%;
+					min-width: 250%;
+
+					&:hover {
+						animation-play-state: paused;
+
+					}
+
+					a {
+						position: relative;
+						height: px(65);
+						width: 100%;
+
+						&:hover{
+							p{
+								transition: all ease-in-out 0.4s;
+								display: flex;
+							}
+						}
+
+						img {
+							height: 100%;
+							object-fit: contain;
+							padding-right: px(24);
+						}
+
+						p {
+							display: none;
+							justify-content: center;
+							align-items: center;
+							margin: 0;
+							position: absolute;
+							top: 0;
+							left: 0;
+							z-index: 10;
+							width: 100%;
+							height: 100%;
+							background: rgba(0, 0, 0, 0.8);
+							font-weight: 500;
+							text-align: center;
+							color: $white;
+							font-size: px(16);
+						}
+					}
+				}
+			}
+
+			.paymentMethodsIcons::-webkit-scrollbar {
+				display: none;
+			}
+
+			.paymentMethodsIcons {
+				.paymentMethodsIcon {
+					animation: scroll $animationSpeed linear infinite;
+				}
+			}
+
+			.paymentMethodsIconsFa {
+				.paymentMethodsIcon {
+					animation: scrollFa $animationSpeed linear infinite;
+				}
+			}
+
+			.paymentMethodsIconsFa::-webkit-scrollbar {
+				display: none;
+			}
+
+
+		}
+
+	}
+}
+

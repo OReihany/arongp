@@ -1,0 +1,149 @@
+.education {
+	display: flex;
+	background-size: cover;
+	flex-direction: column;
+	background: url("../../homepage/importan-symbols-back.png") repeat-y;
+	background-size: cover !important;
+	color: $white;
+
+	.container {
+		display: flex;
+		margin-top: px(60);
+
+		.educationWrapper {
+			display: flex;
+			flex-direction: row;
+			background: $black-300;
+			border-radius: px(20);
+			overflow: hidden;
+
+			.educationSideBar {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				width: px(248);
+				background: $black-400;
+
+				.sideBarTitle {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					width: 100%;
+					height: px(84);
+					border-bottom: 3px solid $black-300;
+
+					img {
+						width: 100%;
+						height: px(38);
+						object-fit: contain;
+					}
+				}
+
+				.sideBarMenu {
+					display: flex;
+					flex-direction: column;
+					height: px(660);
+					align-items: center;
+					justify-content: center;
+					border-bottom: 3px solid $black-300;
+
+					.sideBarMenuItems {
+						display: flex;
+						flex-direction: column;
+						list-style: none;
+						font-size: px(16);
+						padding: px(0);
+
+						.sideBarMenuItem {
+							padding: px(10) px(40);
+							cursor: pointer;
+							margin-top: px(20);
+
+							&:first-child {
+								margin-top: px(0);
+							}
+
+							&.active {
+								border-radius: px(10);
+								background-color: rgba(190, 168, 48, 0.08);
+								color: $primary;
+								transition: all ease 0.3s;
+							}
+						}
+					}
+				}
+
+				.sideBarPlatform {
+					display: flex;
+					flex-direction: row;
+					justify-content: space-around;
+					align-items: center;
+					height: px(100);
+					border-bottom: 3px solid $black-300;
+
+					.sideBarPlatformItem {
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						justify-content: center;
+						background: $primary;
+						border-radius: 50%;
+						width: px(46);
+						height: px(46);
+
+						img {
+							width: px(32);
+							height: px(32);
+						}
+					}
+				}
+
+				.sideBarSignUp {
+					display: flex;
+					flex-direction: column;
+					justify-content: flex-end;
+					width: 100%;
+					height: px(810);
+					padding: 0 px(30) px(64) px(30);
+					font-size: px(14);
+
+					img {
+						width: px(190);
+						height: px(337);
+						border-radius: px(12);
+						margin-bottom: px(16);
+					}
+
+					.singUp {
+						margin: 0;
+						padding: px(16) px(64);
+						color: $black;
+						text-align: center;
+						background: $primary;
+						border-radius: px(12);
+						margin-bottom: px(16);
+						cursor: pointer;
+					}
+
+					.singUpDemo {
+						margin: 0;
+						padding: px(16) px(38);
+						color: $primary;
+						text-align: center;
+						border: 2px solid $primary;
+						border-radius: px(12);
+						cursor: pointer;
+					}
+				}
+
+			}
+			.educationContent{
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				padding: px(40) px(64);
+				width: 100%;
+			}
+		}
+	}
+}

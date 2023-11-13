@@ -1,0 +1,292 @@
+.introduce {
+	display: flex;
+	flex-direction: row;
+	background: black;
+	width: 100%;
+	position: relative;
+	padding: px(48) px(0);
+	height: 100%;
+	margin-top: 80px;
+
+	@include media-breakpoint-down('md') {
+		flex-direction: column;
+		padding: px(86) 0 px(48) px(0);
+	}
+
+	.contentWrapper {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 2;
+
+	}
+
+	.container {
+		display: flex;
+		flex-direction: column;
+
+		.introduceMobile {
+			display: flex;
+			flex-direction: row;
+			@include media-breakpoint-down('md') {
+				flex-direction: column;
+			}
+
+			.content {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				color: $white;
+				width: px(568);
+				padding-right: px(48);
+				@include media-breakpoint-down('md') {
+					width: 100%;
+					padding-right: 0;
+				}
+
+				h2 {
+					color: $primary;
+					line-height: 2;
+				}
+
+				p {
+					font-size: px(14);
+					color: $white;
+					line-height: 2;
+					text-align: justify;
+				}
+
+				.buttonGroup {
+					display: flex;
+					margin: 0 0 px(48) 0;
+					@include media-breakpoint-down('md') {
+						flex-direction: column;
+					}
+
+					button {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						padding: 0 px(32);
+						height: px(56);
+						font-size: px(16);
+						background: $primary;
+						color: $black;
+						margin-right: px(12);
+						border-radius: px(10);
+						font-weight: bold;
+						cursor: pointer;
+						border: px(1) solid $primary;
+
+						&:first-child {
+							&:hover {
+								transition: all 0.4s ease-in-out;
+								color: $primary;
+								border: px(1) solid $primary;
+								background: none;
+							}
+						}
+
+						@include media-breakpoint-down('md') {
+							width: 100%;
+							&:not(:last-of-type) {
+								margin-bottom: 24px;
+							}
+						}
+
+						&.buttonSecondary {
+							box-shadow: 0 0 0 2px $primary;
+							background: transparent;
+							color: $primary;
+
+							&:hover {
+								transition: all 0.4s ease-in-out;
+								color: $black;
+								border: px(1) solid $primary;
+								background: $primary;
+							}
+						}
+					}
+				}
+
+				.opencc {
+					display: flex;
+					flex-direction: column;
+					width: 100%;
+					height: 100%;
+					@include media-breakpoint-down('md') {
+						display: none;
+						height: 0;
+						width: 0;
+					}
+
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: contain;
+						@include media-breakpoint-down('md') {
+							display: none;
+							width: 0;
+							height: 0;
+						}
+					}
+				}
+			}
+		}
+
+		.videosGroup {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			width: 100%;
+			height: 100%;
+			margin: px(48) 0 0 0;
+			@include media-breakpoint-down('md') {
+				height: 100% !important;
+				min-height: px(1200) !important;
+				justify-content: center;
+			}
+
+			.groupTop {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				width: 100%;
+				height: 100%;
+				//height: px(722);
+				@include media-breakpoint-down('md') {
+					flex-direction: column;
+					height: 100% !important;
+				}
+
+				.item1 {
+					display: flex;
+					flex-direction: column;
+					width: px(622);
+					height: 100%;
+					border-radius: px(20);
+					//overflow: hidden;
+					@include media-breakpoint-down('md') {
+						width: 100%;
+						margin-bottom: px(48);
+					}
+
+					div {
+						width: 100%;
+						height: 100%;
+
+						.content {
+							display: flex;
+							flex-direction: column;
+							width: 100%;
+
+							h3 {
+								color: $primary;
+								margin: px(9) 0;
+							}
+
+							p {
+								color: white;
+								margin: 0;
+								line-height: 2;
+							}
+						}
+					}
+				}
+
+				.item2 {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					width: px(412);
+					height: 100%;
+					@include media-breakpoint-down('md') {
+						width: 100%;
+					}
+
+					div {
+						display: flex;
+						flex-direction: column;
+						width: 100%;
+						height: 100%;
+						border-radius: px(20);
+						//overflow: hidden;
+
+						&:not(:last-of-type) {
+							margin: 0 0 px(48) 0;
+						}
+
+						@include media-breakpoint-down('md') {
+							height: 100%;
+						}
+						.content {
+							display: flex;
+							flex-direction: column;
+							width: 100%;
+
+							h3 {
+								color: $primary;
+								margin: px(9) 0;
+							}
+
+							p {
+								color: white;
+								margin: 0;
+								line-height: 2;
+							}
+						}
+					}
+
+				}
+
+			}
+
+			.groupBottom {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				width: 100%;
+				height: 100%;
+				margin: px(86) 0 0 0;
+				@include media-breakpoint-down('md') {
+					flex-direction: column;
+				}
+
+				div {
+					display: flex;
+					flex-direction: column;
+					width: 30%;
+					height: 100%;
+					border-radius: px(20);
+					overflow: hidden;
+					@include media-breakpoint-down('md') {
+						width: 100%;
+						&:not(:last-of-type) {
+							margin: 0 0 px(48) 0;
+						}
+					}
+
+					.content {
+						display: flex;
+						flex-direction: column;
+						width: 100%;
+
+						h3 {
+							color: $primary;
+							margin: px(9) 0;
+						}
+
+						p {
+							color: white;
+							margin: 0;
+							line-height: 2;
+						}
+					}
+				}
+			}
+		}
+	}
+}

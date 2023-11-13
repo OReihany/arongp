@@ -1,0 +1,144 @@
+.feature{
+	display: flex;
+	width: 100%;
+	.container{
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+
+		.featureWrapper{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
+			width: 100%;
+
+			.filedGroupInput{
+				display: flex;
+				flex-direction: column;
+				width: 47%;
+				margin-bottom: px(24);
+
+				span{
+					margin: px(12) px(0);
+					width: 100%;
+				}
+
+				input{
+					width: 100%;
+					border: px(1) solid #d0d0d0;
+					border-radius: px(6);
+					padding: px(6) px(12);
+				}
+				.inputFiled{
+					display: flex;
+					flex-direction: row;
+					width: 100%;
+
+					&:not(:last-of-type){
+						margin-bottom: px(24);
+					}
+
+					.fileUploadWrapper {
+						$defaultColor: #4daf7c;
+						$height: 60px;
+						border: 1px solid $defaultColor;
+						border-radius: px(6);
+						position: relative;
+						width: 100%;
+						height: $height;
+
+						&:after {
+							content: attr(data-text);
+							font-size: 18px;
+							position: absolute;
+							top: 0;
+							left: 0;
+							background: #fff;
+							padding: 10px 15px;
+							display: block;
+							width: calc(100% - 40px);
+							pointer-events: none;
+							z-index: 20;
+							height: $height - 20px;
+							line-height: $height - 20px;
+							color: #999;
+							border-radius: 5px 10px 10px 5px;
+							font-weight: 300;
+						}
+
+						&:before {
+							content: 'Upload';
+							position: absolute;
+							top: 0;
+							right: 0;
+							display: inline-block;
+							height: 60px;
+							background: $defaultColor;
+							color: #fff;
+							font-weight: 700;
+							z-index: 25;
+							font-size: 16px;
+							line-height: $height;
+							padding: 0 15px;
+							text-transform: uppercase;
+							pointer-events: none;
+							border-radius: 0 5px 5px 0;
+						}
+
+						&:hover {
+							&:before {
+								background: darken($defaultColor, 10%);
+							}
+						}
+						input {
+							opacity: 0;
+							position: absolute;
+							top: 0;
+							right: 0;
+							bottom: 0;
+							left: 0;
+							z-index: 99;
+							height: $height - 20px;
+							margin: 0;
+							padding: 0;
+							display: block;
+							cursor: pointer;
+							width: 100%;
+						}
+					}
+				}
+				.image{
+					width: 100%;
+					img{
+						width: 100%;
+						height: px(120);
+						object-fit: contain;
+					}
+				}
+			}
+		}
+
+		.submit{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+
+			button{
+				padding: px(9) px(18);
+				background: #0C606E;
+				border-radius: px(12);
+				box-shadow: 0 px(3) px(6) 0 rgba(0, 0, 0, 0.12);
+				color: white;
+				cursor: pointer;
+
+				&:hover{
+					transition: all 0.3s ease-in-out;
+					background: rgba(12, 96, 110, 0.71);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,47 @@
+.topSlider {
+	display: flex;
+	flex-direction: row;
+	height: px(344);
+	background-size: cover !important;
+	width: 100%;
+	position: relative;
+	margin-top: 80px;
+
+	@include media-breakpoint-down('md'){
+		background: url("aron-anniversary-mobile.png") no-repeat !important;
+		height: px(588);
+	}
+
+	.contentWrapper{
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+
+		.content{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+
+			h1{
+				font-size: px(42);
+				color: $primary;
+				margin: px(24) px(0);
+			}
+
+			.award{
+				font-size: px(56);
+				font-weight: 900;
+				color: $primary;
+				margin: px(24) px(0);
+			}
+			.subtitle{
+				font-size: px(18);
+				font-weight: 700;
+				color: $primary;
+				margin: px(24) px(0);
+			}
+		}
+	}
+}

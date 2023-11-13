@@ -1,0 +1,178 @@
+.table {
+	display: flex;
+	width: 100%;
+	padding: px(48) px(0);
+
+	.container {
+		display: flex;
+		flex-direction: column;
+
+		.topContent{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+
+			p{
+				font-size: px(16);
+				line-height: 2;
+				color: $black-300;
+				text-align: justify;
+				margin: 0 !important;
+			}
+			span{
+				padding: px(12) px(0) px(0) px(24);
+				font-size: px(14);
+				font-weight: 550;
+				color: $grey-500;
+			}
+		}
+
+		.tableTitle {
+			display: flex;
+			color: $primary;
+			margin:  px(48) 0;
+		}
+
+		.contentTable {
+			display: flex;
+			flex-direction: column;
+			border-radius: px(20);
+			box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.42);
+			background-color: $white;
+			@include media-breakpoint-down('md'){
+				width: 100%;
+				overflow: hidden;
+			}
+
+			.tableMenu {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				white-space: nowrap;
+				margin: 0;
+				border-collapse: separate;
+				border-spacing: px(8);
+				table-layout: fixed;
+				position: relative;
+				overflow: hidden;
+				overflow-y: unset;
+				overflow-x: auto;
+				verflow: -moz-scrollbars-none;
+				scrollbar-width: none;
+				max-width: 1500px;
+				width: 100%;
+				height: px(55);
+				border-bottom: px(1) solid $grey-200;
+				padding: px(0) px(36);
+
+				.tableMenuItem {
+					cursor: pointer;
+					list-style: none;
+					font-size: px(14);
+					position: -webkit-sticky;
+					position: sticky;
+					left: 0;
+					z-index: 2;
+					padding: px(16) px(24);
+					background: #ffffff;
+
+					&.active {
+						background: $primary;
+						background: linear-gradient(90deg, rgba($primary, 1) 33%, rgba($primary, 0.25) 100%);
+						color: #fff;
+						font-weight: 700;
+					}
+				}
+			}
+			.tableMenu::-webkit-scrollbar {
+				display: none;
+			}
+			.chart{
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				width: 100%;
+				color: #8884d8;
+				@include media-breakpoint-down('md'){
+					overflow: hidden;
+					verflow: -moz-scrollbars-none;
+					scrollbar-width: none;
+					overflow-y: unset;
+					overflow-x: scroll;
+					width: px(786);
+					height: px(264);
+				}
+
+				.chartNavigation{
+					display: flex;
+					flex-direction: row;
+					justify-content: flex-end;
+					width: 100%;
+					padding: px(0) px(36);
+
+					.chartNavigationItem{
+						font-size: px(16);
+						color: $grey-400;
+						padding: px(2) px(8);
+						list-style: none;
+						cursor: pointer;
+
+						&.active{
+							border: px(1) solid $grey-500;
+							color: $grey-500;
+							font-weight: 600;
+							border-radius: px(8);
+						}
+					}
+				}
+				.mainChart{
+					display: flex;
+					flex-direction: column;
+					width: 100%;
+					justify-content: center;
+					padding: px(0) px(36);
+					margin: px(20) px(0);
+					position: relative;
+					@include media-breakpoint-down('md'){
+						overflow: hidden;
+						verflow: -moz-scrollbars-none;
+						scrollbar-width: none;
+						overflow-y: unset;
+						overflow-x: scroll;
+						padding: 0;
+					}
+					.chartTitle{
+						position: absolute;
+						top: 0;
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						height: 100%;
+						width: 100%;
+						h4{
+							width: 100%;
+							font-size: px(86);
+							color: $primary;
+							margin: px(0);
+							padding: px(0);
+							text-align: center;
+							opacity: 0.3;
+						}
+					}
+				}
+			}
+		}
+		.tooltip{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			border-radius: 0.25rem;
+			background: #0C606E;
+			color: #ffffff;
+			padding: px(5) px(10);
+			box-shadow: 15px 30px 40px 5px rgba(12, 96, 110, 0.5);
+		}
+
+	}
+}

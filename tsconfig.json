@@ -1,0 +1,36 @@
+{
+	"compilerOptions": {
+		"outDir": "dist",
+		"target": "es5",
+		"lib": [
+			"dom",
+			"es2015",
+			"dom.iterable"
+		],
+		"module": "commonjs",
+		"jsx": "react",
+		"baseUrl": "src",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"strict": false,
+		"skipLibCheck": true,
+		"allowJs": true,
+		"esModuleInterop": true,
+		"removeComments": true,
+		"experimentalDecorators": true,
+		"paths": {
+			"components/*": [
+				"components/*"
+			],
+			"services/*": [
+				"services/*"
+			],
+			"core/*": [
+				"core/*"
+			]
+		}
+	},
+	"include": [
+		"src"
+	]
+}

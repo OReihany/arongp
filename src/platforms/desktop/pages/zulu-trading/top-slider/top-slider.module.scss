@@ -1,0 +1,54 @@
+.topSlider {
+	display: flex;
+	flex-direction: row;
+	background-size: cover !important;
+	width: 100%;
+	height: px(351);
+	position: relative;
+	margin-top: 80px;
+
+	.contentWrapper {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 2;
+
+		.content {
+			display: flex;
+			flex-direction: column;
+			color: $white;
+			padding: px(0) px(0) px(0) px(270);
+			width: px(540);
+
+			h1 {
+				color: orangered;
+				letter-spacing: 1px;
+				margin-bottom: px(12);
+			}
+			img{
+				width: px(210);
+				object-fit: contain;
+				margin-bottom: px(36);
+			}
+			.btn{
+				display: flex;
+
+				a{
+					padding: px(12) px(24);
+					border-radius: px(24);
+					background-color: orangered;
+					color: white;
+					cursor: pointer;
+				}
+			}
+		}
+		@include media-breakpoint-down('md'){
+			.content{
+				padding: 12px !important;
+			}
+		}
+	}
+}

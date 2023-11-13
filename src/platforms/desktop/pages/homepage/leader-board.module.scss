@@ -1,0 +1,194 @@
+.leaderBoard{
+	display: flex;
+	background: url("leader-board.png") no-repeat;
+	background-size: cover !important;
+	height: 100%;
+	padding: px(48) 0;
+	@include media-breakpoint-down('md'){
+		height: 100%;
+	}
+	.container{
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		.leaderBoardContentResult{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			width: 100%;
+			padding: px(24);
+			border-radius: px(20);
+			box-shadow: -1px 4px 23px 0px rgba(170,159,114,0.75);
+			-webkit-box-shadow: -1px 4px 23px 0px rgba(170,159,114,0.75);
+			-moz-box-shadow: -1px 4px 23px 0px rgba(170,159,114,0.75);
+			background-color: $black;
+			color: $primary;
+			margin-bottom: px(36);
+			@include media-breakpoint-down('md'){
+				flex-direction: column;
+				margin-bottom: px(24);
+			}
+			.leaderBoardContent{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				width: 30%;
+				@include media-breakpoint-down('md'){
+					width: 100%;
+					align-items: center;
+				}
+				.leaderBoardContentTitle{
+					font-size: px(16);
+					color: $primary;
+				}
+				.leaderBoardContentValue{
+					font-size: px(24);
+					font-weight: 700;
+					span{
+						font-size: px(16);
+						font-weight: 500;
+						color: $grey-300;
+					}
+				}
+			}
+
+		}
+		.leaderBoardTitle{
+			text-align: center;
+			font-size: px(24);
+			color: $white;
+			font-weight: 600;
+			margin: px(0) 0 px(48) 0;
+		}
+		.leaderBoardMenu{
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+			padding: px(0) px(120);
+			border-bottom: px(1) solid $grey-300;
+			@include media-breakpoint-down('md'){
+				padding: px(0);
+			}
+			.leaderBoardMenuItem{
+				font-size: px(16);
+				color: $grey-400;
+				list-style: none;
+				padding: px(12) px(46);
+				cursor: pointer;
+				@include media-breakpoint-down('md'){
+					padding: px(16);
+				}
+				&.active{
+					border-bottom: 2px solid $primary;
+					color: $primary;
+				}
+			}
+		}
+		.leaderBoardContentWrapper{
+			display: flex;
+			flex-direction: row;
+			margin-top: px(48);
+			@include media-breakpoint-down('md'){
+				flex-direction: column;
+				align-items: center;
+			}
+			.leaderBoardContentRanks{
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: row;
+				justify-content: space-between;
+				min-height: 100%;
+				width: 100%;
+				@include media-breakpoint-down('md'){
+					flex-direction: column;
+					flex-wrap: nowrap;
+				}
+				.leaderBoardContentRank{
+					display: flex;
+					flex-direction: row;
+					width: 47%;
+					height: px(76);
+					border: 1px solid $grey-200;
+					border-radius: px(12);
+					overflow: hidden;
+					background-color: white;
+					&:not(:last-of-type){
+						margin-bottom: px(24);
+					}
+					@include media-breakpoint-down('md'){
+						width: 100%;
+						&:not(:last-of-type) {
+							margin-bottom: px(24);
+						}
+					}
+					.rankMedal{
+						width: px(58);
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						background: $primary;
+						font-size: px(32);
+						font-weight: 600;
+					}
+					.content{
+						display: flex;
+						flex-direction: row;
+						justify-content: space-around;
+						width: 100%;
+						h4{
+							margin: 0;
+							font-size: px(15);
+							color: $grey-600;
+							font-weight: 300;
+
+						}
+						p{
+							margin: 0;
+							font-size: px(21);
+							font-weight: 700;
+							color: $grey-500;
+							@include media-breakpoint-down('md'){
+								font-size: px(14);
+							}
+							b{
+								font-size: px(12);
+								font-weight: 400;
+								color: $grey-600;
+							}
+						}
+						.userId{
+							display: flex;
+							flex-direction: column;
+							align-items: center;
+							justify-content: center;
+
+						}
+						.tradeVolume{
+							display: flex;
+							flex-direction: column;
+							align-items: center;
+							justify-content: center;
+
+						}
+						.benefit{
+							display: flex;
+							flex-direction: column;
+							align-items: center;
+							justify-content: center;
+							p{
+								color: $green-500;
+							}
+						}
+					}
+				}
+
+			}
+			.leaderBoardContentRanks::-webkit-scrollbar {
+				display: none;
+			}
+		}
+	}
+}

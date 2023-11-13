@@ -1,0 +1,89 @@
+.guide{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	background: url('./guide.png') no-repeat;
+	background-size: cover !important;
+	padding: px(48) 0;
+	@include media-breakpoint-down('md'){
+		background-size: cover;
+		height: 100%;
+	}
+
+	.container{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		h2{
+			margin: 0 0 px(48) 0;
+			color: $white;
+			width: 100%;
+			text-align: center;
+		}
+
+		.itemsWrapper{
+			display: flex;
+			width: 100%;
+			@include media-breakpoint-down('md'){
+				overflow: hidden;
+				verflow: -moz-scrollbars-none;
+				scrollbar-width: none;
+				overflow-y: unset;
+				overflow-x: scroll;
+				padding: 0 px(12);
+			}
+			.Items{
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				width: 100%;
+				@include media-breakpoint-down('md'){
+					min-width: px(800);
+				}
+
+				.item{
+					display: flex;
+					position: relative;
+					width: px(240);
+					height: px(248);
+					cursor: pointer;
+					@include media-breakpoint-down('md'){
+						&:not(:last-of-type){
+							margin-right: px(24);
+						}
+					}
+
+					img{
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+					}
+
+					p{
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
+						position: absolute;
+						bottom: 0;
+						margin: 0;
+						color: $primary;
+						width: 100%;
+						height: px(72);
+						z-index: 100;
+						font-size: px(14);
+					}
+				}
+			}
+		}
+		@include media-breakpoint-down('md'){
+			.itemsWrapper::-webkit-scrollbar{
+				display: none;
+			}
+		}
+
+	}
+}

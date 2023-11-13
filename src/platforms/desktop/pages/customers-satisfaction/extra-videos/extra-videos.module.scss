@@ -1,0 +1,28 @@
+.extraVideos{
+	display: flex;
+	width: 100%;
+	background: $black;
+	padding: px(48) 0 0 px(0);
+
+	.container{
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: normal;
+		width: 100%;
+
+		div{
+			display: flex;
+			width: 30%;
+			height: px(355);
+			border-radius: px(24);
+			overflow: hidden;
+			margin-bottom: px(48);
+			@include media-breakpoint-down('md'){
+				width: 47%;
+			}
+		}
+
+	}
+}

@@ -1,0 +1,43 @@
+.introduce {
+	display: flex;
+	position: relative;
+	width: 100%;
+	background-size: cover !important;
+	height: 100%;
+	padding: px(48) 0;
+	margin-top: 80px;
+
+	@include media-breakpoint-down('md'){
+		padding: px(112) 0 px(48) 0 ;
+		height: 100%;
+	}
+
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		justify-content: center;
+
+		h4 {
+			margin: 0 0 px(24) 0;
+			font-size: px(24);
+			color: $primary;
+			letter-spacing: px(1);
+			width: 40%;
+			@include media-breakpoint-down('md'){
+				width: 100%;
+			}
+		}
+		p{
+			width: 40%;
+			font-size: px(16);
+			color: $white;
+			font-weight: 550;
+			line-height: 2;
+			@include media-breakpoint-down('md'){
+				width: 100%;
+			}
+		}
+	}
+}

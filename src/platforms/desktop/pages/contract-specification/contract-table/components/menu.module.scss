@@ -1,0 +1,113 @@
+.menuContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  & > li.menuItem {
+    & > .menuContent {
+      display: flex;
+      align-items: center;
+      height: 72px;
+      padding: 0 24px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      margin-bottom: 1px;
+      position: relative;
+      .svgInline {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+        path {
+          stroke: $primary;
+        }
+      }
+
+      &:after {
+        position: absolute;
+        display: flex;
+        content: '';
+        width: 6px;
+        height: 6px;
+        background: transparent;
+        right: 24px;
+        transform: rotateZ(-45deg);
+        box-shadow: inset -1px -1px 0 0 #000;
+      }
+
+    }
+    &.active > .menuContent, & > .menuContent:hover {
+        background: $primary;
+        background: linear-gradient(90deg, rgba($primary,1) 33%, rgba($primary,0.25) 100%);
+        color: #fff;
+        .svgInline {
+          path {
+            stroke: #fff;
+          }
+        }
+    }
+    &.active > .menuContent:after {
+
+      transform: rotateZ(45deg);
+    }
+    ul.subMenu {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      flex-direction: column;
+      display: none;
+
+      & > li.menuItem {
+        display: flex;
+        flex-direction: column;
+
+        & > .menuContent {
+          position: relative;
+          display: flex;
+          align-items: center;
+          height: 48px;
+          padding: 0 24px;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 22px;
+          cursor: pointer;
+          margin-bottom: 1px;
+          overflow: hidden;
+
+          &:after {
+            position: absolute;
+            display: none;
+            content: '';
+            width: 12px;
+            height: 12px;
+            margin-top: -2px;
+            background: #fff;
+            right: 0;
+            transform: rotateZ(-45deg);
+            transform-origin: 100% 0;
+          }
+
+        }
+
+        &.active > .menuContent, & > .menuContent:hover {
+          background: rgba($primary, 0.25);
+        }
+
+        &.active > .menuContent:after {
+          display: flex;
+        }
+      }
+    }
+    &.active ul.subMenu {
+      display: flex;
+    }
+  }
+  &.isMobile {
+    .menuContent:after {
+      display: none!important;
+    }
+  }
+}

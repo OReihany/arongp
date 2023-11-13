@@ -1,0 +1,43 @@
+.topSlider {
+	display: flex;
+	flex-direction: row;
+	background: url("../../meta-trader/top-slider/top-slider.png");
+	background-size: cover !important;
+	width: 100%;
+	height: px(351);
+	position: relative;
+	margin-top: 80px;
+
+	@include media-breakpoint-down('md'){
+		background: url("./top-slider-min.png") no-repeat;
+	}
+
+	.contentWrapper {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 2;
+
+
+		.content {
+			display: flex;
+			color: $white;
+			padding: px(0) px(0) px(0) px(270);
+			width: px(540);
+			@include media-breakpoint-down('md'){
+				width: 100%;
+				margin-top: px(96);
+				padding: px(0) px(16) !important;
+			}
+
+			h4 {
+				font-size: px(24);
+				font-weight: 600;
+				line-height: 2;
+			}
+		}
+	}
+}

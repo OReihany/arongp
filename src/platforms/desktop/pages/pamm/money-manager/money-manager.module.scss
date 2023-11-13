@@ -1,0 +1,297 @@
+.moneyManager {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+
+	.moneyManagerTop {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		background: url("./bg-moneymanager.jpg");
+		background-size: 100%;
+		padding: px(48) 0;
+
+		.title {
+			display: flex;
+			width: 100%;
+
+			.container {
+				display: flex;
+				width: 100%;
+
+				h1 {
+					color: white;
+				}
+			}
+		}
+
+		.container {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			width: 100%;
+
+			@include media-breakpoint-down('md') {
+				flex-direction: column;
+			}
+
+			.left, .right {
+				display: flex;
+				flex-direction: column;
+				width: 43%;
+
+				@include media-breakpoint-down('md'){
+					width: 100%;
+				}
+
+				.title {
+					display: flex;
+					flex-direction: column;
+					width: 100%;
+
+					h2 {
+						margin: px(0) 0 px(24) 0;
+						color: #ffffff;
+						text-align: center;
+						line-height: 2;
+
+						.bold {
+							font-size: px(24);
+							font-weight: 900;
+							color: #ffffff;
+							margin: px(0) px(8);
+						}
+					}
+				}
+
+				.content {
+					display: flex;
+					flex-direction: column;
+					width: 100%;
+
+					.item {
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						width: 100%;
+
+						&:not(:last-of-type) {
+							margin-bottom: px(16);
+						}
+
+						p {
+							margin: 0;
+							font-size: px(16);
+							line-height: 2;
+							color: #ffffff;
+						}
+
+						span {
+							color: $green-400;
+						}
+
+						&.rtl {
+
+							span {
+								transform: scale(1, 1);
+								padding: 0 px(12);
+							}
+						}
+
+					}
+				}
+			}
+		}
+	}
+
+	.moneyManagerMiddle {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		background: transparent;
+
+		.container {
+			display: flex;
+			justify-content: center;
+			width: 100%;
+
+			h1 {
+				text-align: center;
+				margin: px(48) 0 px(48) 0;
+
+				.bold {
+					font-size: px(26);
+					line-height: 2;
+					font-weight: 900;
+					margin: px(0) px(8);
+				}
+			}
+		}
+	}
+
+	.moneyManagerBottom, .moneyManagerLatest, .transparentCalculation, .bePart, .fullyCustomisable {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		padding: px(48) px(0);
+
+		.container {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			width: 100%;
+
+			.left, .right {
+				display: flex;
+				flex-direction: column;
+				width: 43%;
+
+				.title {
+					display: flex;
+					flex-direction: column;
+					width: 100%;
+
+					h2 {
+						margin: px(0) 0 px(24) 0;
+						line-height: 2;
+
+						.bold {
+							font-size: px(24);
+							font-weight: 900;
+							margin: px(0) px(8);
+						}
+					}
+				}
+
+				.content {
+					display: flex;
+					flex-direction: column;
+					width: 100%;
+
+					.item {
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						width: 100%;
+
+						&:not(:last-of-type) {
+							margin-bottom: px(16);
+						}
+
+						p {
+							margin: 0;
+							font-size: px(16);
+							line-height: 2;
+						}
+
+						span {
+							color: $green-400;
+						}
+
+						&.rtl {
+
+							span {
+								transform: scale(1, 1);
+								padding: 0 px(12);
+							}
+						}
+
+					}
+				}
+			}
+		}
+
+		.btn {
+			display: flex;
+			width: 100%;
+			margin-top: px(16);
+
+			.container {
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+
+				a {
+					padding: px(12) px(18);
+					border: 1px solid $primary;
+					color: $primary;
+					border-radius: px(8);
+					font-size: px(16);
+					font-weight: 600;
+
+					&:hover {
+						transition: all ease-in-out 0.2s;
+						color: $black;
+						background: $primary;
+						box-shadow: 0 px(3) px(6) 0 rgba(0, 0, 0, 0.7);
+					}
+				}
+			}
+		}
+	}
+
+	.moneyManagerLatest {
+		background: #eee;
+
+		.container {
+			padding: px(48) px(0);
+
+			.right {
+				position: relative;
+				top: 0;
+
+				img {
+					position: absolute;
+					top: -72px;
+					width: 100%;
+					object-fit: contain;
+				}
+			}
+		}
+	}
+
+	.transparentCalculation {
+		background: url("./bg-moneymanager.jpg");
+		background-size: 100%;
+
+		.container {
+			.right {
+				color: #ffffff;
+			}
+		}
+	}
+
+	.bePart {
+		background: url("./bg-fpmmp.jpg");
+		background-size: 100%;
+	}
+	.bePartFa {
+		background: url("./bg-fpmmpfa.jpg");
+		background-size: 100%;
+	}
+
+	.fullyCustomisable {
+		background: url("./bg-fully-customisable.png");
+		background-size: 100%;
+	}
+
+	@include media-breakpoint-down('md') {
+		.moneyManagerBottom, .moneyManagerLatest, .transparentCalculation, .bePart, .fullyCustomisable {
+			.container {
+				flex-direction: column;
+
+				.left, .right {
+					width: 100%;
+				}
+			}
+
+			.btn {
+				display: flex;
+				width: 100%;
+				margin-top: px(16);
+			}
+		}
+	}
+}

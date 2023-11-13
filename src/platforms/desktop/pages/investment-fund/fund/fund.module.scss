@@ -1,0 +1,36 @@
+.previousBonus {
+	display: flex;
+	width: 100%;
+	min-height: px(992);
+	//background: url("forex-market.png") repeat-y;
+	//background-size: cover !important;
+	height: 100%;
+	margin: 24px 0;
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+
+		.texture{
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			margin-bottom: px(24);
+
+			.mainHeader{
+				font-size: px(26);
+				font-weight: 700;
+			}
+			.text {
+				font-size: 14px;
+				line-height: 2;
+			}
+			.secondHeader{
+				font-size: px(20);
+				font-weight: 600;
+			}
+		}
+
+	}
+}

@@ -1,0 +1,331 @@
+.mainBanner {
+	display: flex;
+	width: 100%;
+
+	.modalContent{
+		display: flex;
+		width: 100%;
+
+		.modalContainer{
+			display: flex;
+			width: 100%;
+
+			form{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+
+				.textFiled{
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+					align-items: center;
+					width: 70%;
+					margin-bottom: px(24);
+
+					p{
+						font-size: px(14);
+					}
+					input{
+						width: 55%;
+						height: px(46);
+						border: px(1) solid #4daf7c;
+						border-radius: px(6);
+						padding: px(0) px(24);
+					}
+
+				}
+
+				.showStatus{
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					align-items: center;
+					p{
+						margin-right: px(24);
+					}
+
+					.label:not(:last-of-type){
+						margin-right: px(24);
+					}
+
+				}
+				.btnSubmit{
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					align-items: center;
+					width: 100%;
+
+					.btn{
+						padding: px(12) px(24);
+						background: $green-600;
+						border-radius: px(6);
+						color: white;
+						cursor: pointer;
+					}
+				}
+
+				.features{
+					display: flex;
+					flex-direction: column;
+					width: 100%;
+					margin: px(24) px(0);
+					.featuresHeader{
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						.btnAdd{
+							padding: px(12) px(24);
+							border-radius: px(8);
+							background: $blue-500;
+							color: $white;
+							box-shadow: 0 px(3) px(6) 0 rgba(0, 0, 0, 0.12);
+							margin: px(0) px(24);
+							cursor: pointer;
+						}
+					}
+					.featuresWrapper{
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
+						width: 100%;
+
+						.feature{
+							display: flex;
+							flex-direction: row;
+							align-items: center;
+							width: 100%;
+							padding: px(24) px(0);
+							border-bottom: px(1) #dddddd solid;
+							.inputGroup{
+								display: flex;
+								flex-direction: column;
+								justify-content: space-between;
+								width: 100%;
+
+								.inputFiled{
+									display: flex;
+									flex-direction: row;
+									justify-content: space-between;
+									align-items: center;
+
+									input{
+										width: 47%;
+										border: px(1) solid $blue-300;
+										border-radius: px(6);
+										height: px(36);
+										padding: px(6) px(12);
+										margin: px(12) px(0);
+									}
+								}
+							}
+							.close{
+								display: flex;
+								flex-direction: row;
+								justify-content: center;
+								align-items: center;
+								width: 64px;
+								height: 100%;
+								span{
+									display: flex;
+									justify-content: center;
+									align-items: center;
+									width: px(32);
+									height: px(32);
+									border: px(1) solid $red-400;
+									border-radius: 50%;
+									background: $red-400;
+									color: $white;
+									box-shadow: 0 px(3) px(6) 0 rgba(0, 0, 0, 0.12);
+									cursor: pointer;
+								}
+							}
+						}
+					}
+				}
+				.modals{
+					display: flex;
+					flex-direction: column;
+					width: 100%;
+					margin-bottom: px(24);
+					.modalsHeader{
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						.btnAdd{
+							padding: px(12) px(24);
+							border-radius: px(8);
+							background: $green-500;
+							color: $white;
+							box-shadow: 0 px(3) px(6) 0 rgba(0, 0, 0, 0.12);
+							margin: px(0) px(24);
+							cursor: pointer;
+						}
+					}
+					.modalsWrapper{
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
+						width: 100%;
+
+						.modalGroup{
+							display: flex;
+							flex-direction: row;
+							align-items: center;
+							width: 70%;
+							padding: px(24) px(0);
+							border-bottom: px(1) #dddddd solid;
+							.inputGroup{
+								display: flex;
+								flex-direction: column;
+								justify-content: space-between;
+								width: 100%;
+
+								.inputFiled{
+									display: flex;
+									flex-direction: row;
+									justify-content: space-between;
+									align-items: center;
+
+									input{
+										width: 47%;
+										border: px(1) solid $green-500;
+										border-radius: px(6);
+										height: px(36);
+										padding: px(6) px(12);
+										margin: px(12) px(0);
+									}
+								}
+							}
+							.close{
+								display: flex;
+								flex-direction: row;
+								justify-content: center;
+								align-items: center;
+								width: 64px;
+								height: 100%;
+								span{
+									display: flex;
+									justify-content: center;
+									align-items: center;
+									width: px(32);
+									height: px(32);
+									border: px(1) solid $red-400;
+									border-radius: 50%;
+									background: $red-400;
+									color: $white;
+									box-shadow: 0 px(3) px(6) 0 rgba(0, 0, 0, 0.12);
+									cursor: pointer;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			.deleteModal{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+
+				div{
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					align-items: center;
+					width: 70%;
+				}
+				.content{
+					p{
+						font-size: px(14);
+					}
+				}
+				.btnSubmit{
+					.btn{
+						padding: px(12) px(24);
+						margin: px(6) px(12);
+						cursor: pointer;
+						border-radius: px(6);
+						box-shadow: 0 px(3) px(6) 0 rgba(0, 0, 0, 0.16);
+						color: white;
+						&:hover{
+							transition: all ease-in-out 0.3s;
+							opacity: 0.8;
+						}
+
+						&:first-child{
+							background: $red-500;
+						}
+						&:last-child{
+							background: $blue-500;
+					}
+					}
+				}
+			}
+		}
+
+	}
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+
+		.createNew{
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-end;
+			width: 100%;
+
+			a{
+				margin: px(24);
+				padding: px(12);
+				background: $green-500;
+				color: white;
+				cursor: pointer;
+				border-radius: px(12);
+				box-shadow: 0 px(3) px(6) 0 rgba(0, 0, 0, 0.16);
+			}
+		}
+		.tableMainAccount {
+			display: flex;
+			width: 100%;
+
+			.table {
+				width: 100%;
+				border-collapse: collapse;
+
+				thead {
+					tr {
+						th {
+							text-align: left;
+							height: px(46);
+						}
+					}
+				}
+
+				tbody {
+					tr {
+						td {
+							min-height: px(64);
+							&.active{
+								color: $green-500;
+							}
+						}
+
+						&:nth-child(odd) {
+							background: $grey-100;
+						}
+					}
+				}
+			}
+		}
+	}
+}

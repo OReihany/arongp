@@ -1,0 +1,626 @@
+.mainLayout {
+	display: flex;
+	flex-direction: column;
+	min-height: px(92);
+	background: $black;
+	color: $white;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10000;
+	width: 100%;
+
+	@include media-breakpoint-down('md') {
+		display: none !important;
+	}
+
+
+	.container {
+		display: flex;
+		justify-content: space-between;
+		flex: 1 1 auto;
+
+		.menuItems {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			width: 100%;
+
+			.topMenu {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+
+				.topMenuGroupLog {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+
+					.branding {
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+
+						img {
+							height: px(46);
+						}
+					}
+				}
+
+				.topMenuGroup {
+					display: flex;
+
+					.menuItem {
+						position: relative;
+						display: flex;
+						cursor: pointer;
+
+						&:not(:last-of-type) {
+							margin-right: px(12);
+						}
+
+						.menuItemSubmenu {
+							display: none;
+							flex-direction: column;
+							position: absolute;
+							left: 50%;
+							transform: translateX(-50%);
+							top: 100%;
+							background: $black;
+							min-width: px(220);
+							padding: px(12) 0;
+
+							&.menuItemSubmenuActive {
+								display: flex;
+							}
+
+							.subMenuItem {
+								display: flex;
+								//padding: px(12) px(24);
+
+								&.subMenuItemActive {
+									background: $primary;
+								}
+							}
+						}
+
+						.menuItemContent {
+							display: flex;
+							flex-direction: row;
+							align-items: center;
+							width: 100%;
+							padding: px(12) px(24);
+							//padding: 0 px(12);
+
+							img {
+								width: px(24);
+								margin-right: px(12);
+							}
+							.arrowDown{
+								display: flex;
+								flex-direction: column;
+								align-items: center;
+								justify-content: center;
+								width: px(36);
+								padding: 0 px(6);
+
+								img{
+									width: 9px;
+									height: 100%;
+									object-fit: contain;
+								}
+							}
+
+						}
+
+						&.menuItemLanguage {
+							text-transform: uppercase;
+						}
+
+						&.menuItemButton {
+							align-items: center;
+
+							.menuItemContent {
+								background: $primary;
+								height: px(36);
+								padding: 0 px(24);
+								border-radius: px(10);
+								font-size: px(14);
+								color: $black;
+							}
+						}
+
+						&.menuItemButtonOutline {
+							.menuItemContent {
+								background: transparent;
+								box-shadow: 0 0 0 2px $primary;
+								color: $primary;
+							}
+						}
+
+						&.menuItemWithSubmenu {
+							&:hover {
+								.menuItemSubmenu {
+									display: flex;
+									z-index: 10;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			.downMenu {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+
+				.downMenuGroup {
+					display: flex;
+					flex: 1 1 auto;
+					justify-content: flex-start;
+
+					.branding {
+						display: flex;
+						align-items: center;
+
+						img {
+							height: px(36);
+						}
+					}
+
+					.menuItem {
+						position: relative;
+						display: flex;
+						cursor: pointer;
+
+						&:not(:last-of-type) {
+							margin-right: px(12);
+						}
+
+
+						.menuItemSubmenu {
+							display: none;
+							flex-direction: column;
+							position: absolute;
+							left: 50%;
+							transform: translateX(-50%);
+							top: 100%;
+							background: $black;
+							min-width: px(220);
+							padding: px(12) 0;
+							z-index: 10;
+
+							.subMenuItem {
+								display: flex;
+								//padding: px(12) px(24);
+
+								&.subMenuItemActive {
+									background: $primary;
+								}
+
+								&:hover {
+									background: $primary;
+								}
+							}
+						}
+
+						.menuItemContent {
+							display: flex;
+							align-items: center;
+							width: 100%;
+							padding: px(12) px(24);
+							//padding: 0 px(12);
+
+							.arrowDown{
+								display: none;
+								flex-direction: column;
+								align-items: center;
+								justify-content: center;
+								width: px(36);
+								padding: 0 px(6);
+
+								img{
+									width: 9px;
+									height: 100%;
+									object-fit: contain;
+								}
+							}
+
+							&:hover{
+								transition: ease-in-out 0.2s;
+								color: #0d0d0d !important;
+							}
+						}
+
+						&.menuItemLanguage {
+							text-transform: uppercase;
+						}
+
+						&.menuItemButton {
+							align-items: center;
+
+							.menuItemContent {
+								background: $primary;
+								height: px(36);
+								padding: 0 px(24);
+								border-radius: px(10);
+								font-size: px(14);
+							}
+						}
+
+						&.menuItemButtonOutline {
+							.menuItemContent {
+								background: transparent;
+								box-shadow: 0 0 0 2px $primary;
+								color: $primary;
+							}
+						}
+
+						&.menuItemWithSubmenu {
+							.menuItemContent .arrowDown{
+									display: flex;
+								}
+
+							&:hover {
+								.menuItemSubmenu {
+									display: flex;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.icon {
+	display: flex;
+	width: px(24);
+	object-fit: contain;
+
+	path {
+		fill: $white;
+	}
+}
+
+.main {
+	display: flex;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10000;
+
+	@include media-breakpoint-up('md') {
+		display: none !important;
+	}
+
+	.menuOut {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background: none;
+		height: px(96);
+		position: fixed;
+		top: 0;
+		width: 100%;
+		padding: px(0) px(12);
+		z-index: 100;
+		background: black;
+
+		.container {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+
+			.menu {
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+				background: black;
+				padding: px(12);
+				border-radius: px(24);
+				border: px(1) solid $primary;
+				cursor: pointer;
+
+				.menuIcon {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					padding: 0 px(6);
+
+					img{
+						width: 24px;
+						object-fit: contain;
+					}
+				}
+
+				span {
+					color: $primary;
+				}
+			}
+
+			.logo {
+				display: flex;
+				align-items: center;
+
+				img {
+					height: px(46);
+					object-fit: contain;
+				}
+			}
+
+			.loginButton {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				background: black;
+				border: px(1) solid $primary;
+				padding: px(12);
+				border-radius: px(24);
+
+				.menuItemContent {
+					color: $primary;
+				}
+			}
+		}
+	}
+
+	.mainLayoutMobile {
+		top: 0;
+		bottom: 0;
+		position: fixed;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		z-index: 1000;
+		min-height: 100%;
+		width: 70%;
+		background: $black;
+		color: $white;
+
+		&.menuDeactivate {
+			animation: slideMenuDe 300ms ease-in-out forwards;
+			transform-origin: top center;
+		}
+
+
+		&.menuActive {
+			display: flex;
+			animation: slideMenu 300ms ease-in-out forwards;
+			transform-origin: top center;
+		}
+
+		.container {
+			display: flex;
+
+			.menuItems {
+				display: flex;
+				flex-direction: column;
+				//justify-content: space-between;
+				margin: 0 px(24) 0 0;
+				width: 100%;
+
+				.branding {
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+					width: 100%;
+					align-items: center;
+					padding: px(24) px(0);
+
+					img {
+						height: px(36);
+						object-fit: contain;
+					}
+
+					.closeMenu {
+						display: flex;
+						align-items: center;
+						padding: px(4);
+						border: px(1) solid $primary;
+						border-radius: 50%;
+						cursor: pointer;
+
+						i {
+							font-size: px(24);
+							color: $primary;
+						}
+					}
+				}
+
+				.menuItem {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					padding: px(12) px(0);
+
+					.menuItemContent {
+						display: flex;
+						flex-direction: row;
+						justify-content: space-between;
+
+						span {
+							font-size: px(16);
+							padding: px(0) px(8);
+						}
+
+						img {
+							height: px(24);
+							object-fit: contain;
+
+						}
+
+						.arrowDown{
+							display: none;
+							flex-direction: column;
+							align-items: center;
+							justify-content: center;
+							width: px(36);
+							padding: 0 px(6);
+
+							img{
+								width: 9px;
+								object-fit: contain;
+							}
+						}
+
+					}
+
+					&.menuItemLanguage {
+						.menuItemLangContent {
+							display: flex;
+							flex-direction: column;
+							justify-content: center;
+							align-items: center;
+							border-top: px(2) solid $white;
+							border-bottom: px(2) solid $white;
+							border-width: thin;
+							padding: px(18) px(0);
+							cursor: pointer;
+
+							.languageSelected {
+								display: flex;
+								flex-direction: row;
+								justify-content: space-between;
+								span {
+									font-size: px(16);
+									padding: px(0) px(8);
+								}
+
+								.arrowDown {
+									display: none;
+								}
+
+								img {
+									width: px(24);
+									object-fit: contain;
+								}
+
+							}
+							.menuItemSubmenu {
+								display: none;
+								flex-direction: column;
+								padding: px(0) px(0) px(0) px(16);
+
+								.subMenuItem {
+									padding: px(12) px(0);
+
+									a {
+										font-size: px(14);
+									}
+								}
+
+								&.menuItemSubmenuActive {
+									display: flex;
+									animation: rotateMenu 400ms ease-in-out forwards;
+									transform-origin: top center;
+								}
+							}
+						}
+					}
+
+					&.menuItemWithSubmenu {
+						padding: px(16) px(0);
+
+						.menuItemContent {
+							.arrowDown{
+								display: flex;
+							}
+						}
+					}
+
+					.menuItemSubmenu {
+						display: none;
+						flex-direction: column;
+						padding: px(0) px(0) px(0) px(16);
+
+						.subMenuItem {
+							padding: px(12) px(0);
+
+							a {
+								font-size: px(14);
+							}
+						}
+
+						&.menuItemSubmenuActive {
+							display: flex;
+							animation: rotateMenu 400ms ease-in-out forwards;
+							transform-origin: top center;
+						}
+					}
+				}
+
+				.menuItemButton {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					width: 100%;
+					border: px(1) solid $primary;
+					padding: px(12) px(0);
+					border-radius: px(8);
+					margin: px(12) px(0);
+
+					.menuItemContent {
+						font-size: px(14);
+					}
+
+					&.menuItemButtonOutline {
+						background: $primary;
+					}
+				}
+			}
+		}
+
+	}
+}
+
+
+@keyframes rotateMenu {
+	0% {
+		transform: scaleY(0)
+	}
+	80% {
+		transform: scaleY(1.1)
+	}
+	100% {
+		transform: scaleY(1)
+	}
+}
+
+@keyframes slideMenu {
+	from {
+		width: 0;
+	}
+	to {
+		width: 70%;
+	}
+}
+
+@keyframes slideMenuDe {
+	from {
+		width: 70%;
+	}
+	to {
+		width: 0;
+	}
+}
+
+#languages{
+	a{
+		display: flex;
+		padding: px(12) 0;
+		background: $black;
+		color: $white;
+		span{
+			background: $black;
+			color: $white;
+		}
+	}
+}

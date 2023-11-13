@@ -1,0 +1,20 @@
+import React, {useEffect} from "react";
+import styles from './loader.module.scss';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+fade
+
+
+export const Loader = () => {
+	useEffect(() => {
+		AOS.init({
+			duration : 1000
+		});
+		AOS.refresh();
+	}, []);
+  return <div data-aos="fade" data-aos-offset="100" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true"
+	  className={styles.loader}>
+	  <img data-aos="slide-up" data-aos-offset="100" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true"
+		  src={require('../../homepage/logo.png').default} alt=""/>
+  </div>
+}

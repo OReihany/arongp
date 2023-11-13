@@ -1,0 +1,78 @@
+.annotationManager {
+	display: flex;
+	position: relative;
+	width: 100%;
+	background: url("job-back.png") repeat-y;
+	background-size: cover !important;
+	@include media-breakpoint-down('md'){
+		padding: px(24);
+	}
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		padding: px(58) px(0);
+
+		h4 {
+			font-size: px(24);
+			color: $primary;
+			letter-spacing: px(1);
+			margin: 0;
+			padding: px(24) px(0);
+		}
+
+		p {
+			font-size: px(16);
+			color: $primary;
+			text-align: left;
+			margin: 0;
+			padding: 0;
+			@include media-breakpoint-down('md'){
+				font-size: px(13);
+			}
+		}
+
+		.information{
+			display: flex;
+			flex-direction: column;
+			min-height: px(1200);
+
+			p{
+				margin: px(24) px(0);
+				color: $white;
+				line-height: 2;
+				text-align: justify;
+			}
+			.responsibilities{
+				display: flex;
+				flex-direction: column;
+				height: 100%;
+
+				p{
+					font-size: px(22);
+					font-weight: 600;
+				}
+
+				.responsibilitie{
+					display: flex;
+					flex-direction: column;
+					h4{
+						margin-left: px(24);
+						font-size: px(20);
+						font-weight: 600;
+					}
+					p{
+						font-size: px(16);
+						padding: 0;
+						line-height: 2;
+						margin: px(0) px(0) px(0) px(48);
+					}
+				}
+			}
+
+		}
+
+
+	}
+}

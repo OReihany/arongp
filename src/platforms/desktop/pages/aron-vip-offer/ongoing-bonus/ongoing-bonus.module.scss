@@ -1,0 +1,141 @@
+.onGoing {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	background: url("../../prize/rules/rules.png") repeat-y;
+	background-size: cover !important;
+	padding: px(48) 0 0 px(0);
+
+	.container {
+		display: flex;
+		width: 100%;
+
+		.onGoingWrapper {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			width: 100%;
+
+			h2 {
+				color: $black-200;
+				margin: 0 0 px(48) 0;
+			}
+
+			.onGoingCards {
+				display: flex;
+				align-items: flex-start;
+				flex-wrap: wrap;
+				justify-content: space-between;
+
+				@include media-breakpoint-down('md'){
+					flex-wrap: unset;
+					flex-direction: column;
+				}
+
+				.onGoingCard {
+					display: flex;
+					flex-direction: column;
+					min-height: px(775);
+					border-radius: px(20);
+					box-shadow: 0 px(3) px(20) 0 rgba(0, 0, 0, 0.42);
+					width: 47%;
+					margin-bottom: px(48);
+					overflow: hidden;
+					background: $white;
+
+					@include media-breakpoint-down('md'){
+						width: 100%;
+						min-height: px(546);
+					}
+
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+					}
+
+					.onGoingCardContent {
+						display: flex;
+						flex-direction: column;
+						justify-content: space-between;
+
+						h4 {
+							display: flex;
+							flex-direction: row;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+							padding: 0 px(48);
+							font-size: px(20);
+							font-weight: 650;
+							font-stretch: normal;
+							font-style: normal;
+							line-height: 1.58;
+							letter-spacing: -0.52px;
+							color: $black-300;
+							height: px(64);
+							overflow: hidden;
+
+							@include media-breakpoint-down('md'){
+								height: px(146);
+							}
+						}
+
+						p {
+							padding: 0 px(48);
+							font-size: px(14);
+							font-stretch: normal;
+							font-style: normal;
+							line-height: 1.58;
+							color: $black-300;
+							margin-bottom: px(48);
+							height: px(84);
+							overflow: hidden;
+
+							@include media-breakpoint-down('md'){
+								padding: px(0) px(12);
+								text-align: center;
+								height: px(138);
+								margin-bottom: px(12);
+
+							}
+						}
+
+						.ongoingButton {
+							display: flex;
+							flex-direction: row;
+							justify-content: center;
+							align-items: center;
+							height: 100%;
+
+
+							a{
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								border: px(1) solid $primary;
+								width: 60%;
+								height: px(48);
+								border-radius: px(8);
+								background: white;
+								cursor: pointer;
+								span{
+									font-size: px(14);
+									font-weight: bold;
+									margin: 0;
+									color: $primary;
+									&:hover{
+										transition: all 0.4s ease;
+										font-size: px(12);
+									}
+								}
+							}
+
+						}
+
+					}
+				}
+			}
+		}
+	}
+}

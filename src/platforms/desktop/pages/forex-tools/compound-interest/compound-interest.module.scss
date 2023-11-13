@@ -1,0 +1,68 @@
+.compoundInterest {
+	display: flex;
+	width: 100%;
+	padding: px(36);
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+
+
+		.title{
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 24px;
+
+			p{
+				line-height: 2;
+			}
+		}
+		.compoundInterestWrapper {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
+
+			.problems {
+				display: flex;
+				flex-direction: column;
+				width: 47%;
+
+				.problem {
+					display: flex;
+					flex-direction: row;
+					width: 100%;
+					justify-content: space-between;
+					align-items: center;
+
+
+					&:not(last-of-type) {
+						margin-bottom: px(16);
+					}
+
+					input {
+						border: 1px solid #dedede;
+						border-radius: 6px;
+						padding: 12px;
+						width: 60%;
+					}
+
+					p {
+						width: 35%;
+					}
+				}
+
+
+			}
+
+			.result {
+				display: flex;
+				width: 47%;
+				height: 100%;
+
+			}
+		}
+	}
+}

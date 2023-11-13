@@ -1,0 +1,61 @@
+.profitHistory{
+	display: flex;
+	width: 100%;
+	min-height: px(400);
+	padding: px(36) px(0);
+
+	.container{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+
+		.historyWrapper{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+
+			.top, .bottom{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+
+				.content{
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+					align-items: center;
+					width: 100%;
+					@include media-breakpoint-down('md'){
+						flex-direction: column;
+
+						div{
+							width: 100%;
+						}
+					}
+
+					div{
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
+						width: 48%;
+						height: px(400);
+
+						@include media-breakpoint-down('md'){
+							width: 100%;
+						}
+					}
+				}
+
+			}
+
+		}
+
+	}
+}

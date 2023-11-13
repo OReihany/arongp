@@ -1,0 +1,100 @@
+.history{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+	.onlineDeal{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		width: 100%;
+		min-height: px(486);
+
+
+
+		.container{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+
+			@include media-breakpoint-down('md'){
+				flex-direction: column-reverse;
+				align-items: baseline;
+			}
+
+			.content{
+				display: flex;
+				flex-direction: column;
+
+				h5{
+					font-size: px(20);
+					font-weight: 700;
+					color: $black;
+					margin: 0;
+				}
+				p{
+					font-size: px(14);
+					line-height: 2;
+					color: $black;
+					text-align: justify;
+				}
+			}
+			.brand{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				width: px(552);
+				height: 100%;
+				@include media-breakpoint-down('md'){
+					width: 100%;
+				}
+
+
+				img{
+					width: px(552);
+					height: 100%;
+					object-fit: contain;
+					@include media-breakpoint-down('md'){
+						width: 100%;
+						object-fit: contain;
+					}
+				}
+			}
+		}
+	}
+	.activityHistory{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		width: 100%;
+		min-height: px(660);
+		background: #001220;
+		@include media-breakpoint-down('md'){
+			padding: px(50) 0 px(120) 0;
+		}
+
+		.container{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+
+			h5{
+				font-size: px(20);
+				font-weight: 700;
+				color: $white;
+				margin: 0;
+			}
+			p{
+				font-size: px(14);
+				line-height: 2;
+				color: $white;
+				text-align: justify;
+			}
+
+		}
+	}
+}

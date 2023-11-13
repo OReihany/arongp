@@ -1,0 +1,392 @@
+.competition {
+	display: flex;
+	width: 100%;
+
+	.modalContent {
+		display: flex;
+		width: 100%;
+
+		.modalContainer {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+
+			p {
+				line-height: 1.5;
+			}
+
+			.table {
+				display: flex;
+				justify-content: center;
+				width: 100%;
+
+				table {
+					width: 70%;
+					border-collapse: collapse;
+
+					thead {
+						tr {
+							background: $grey-300;
+
+							th {
+								height: px(42);
+							}
+						}
+					}
+
+					tbody {
+						tr {
+							td {
+								height: px(42);
+								text-align: center;
+							}
+
+							&:nth-child(2n) {
+								background: $grey-200;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.rankingTrader {
+		display: flex;
+		width: 100%;
+		padding: px(48) px(0);
+
+		.container {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+
+			.titleCom {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+				width: 100%;
+			}
+
+			.rankingTraderWrapper {
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+				padding: px(12);
+				border: solid px(1) #dedede;
+				border-radius: px(12);
+
+				.searchBox {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					padding: px(12) px(0);
+					border-bottom: px(1) solid #dedede;
+					width: 100%;
+
+					.searchWrapper {
+						display: flex;
+						flex-direction: row;
+						justify-content: space-between;
+						align-items: center;
+						width: 100%;
+						padding: 0 px(24);
+
+						@include media-breakpoint-down('md') {
+							padding: 0 px(12);
+							flex-direction: column;
+							justify-content: center;
+						}
+
+						.searchInput {
+							display: flex;
+							width: 37%;
+							flex-direction: row;
+							align-items: center;
+							justify-content: space-between;
+
+							span {
+								font-weight: 600;
+								color: $black-200;
+							}
+
+							input {
+								height: px(42);
+								padding: px(6) px(12);
+								border: px(1) solid #dedede;
+								width: 100%;
+								border-radius: px(6);
+								margin: px(0) px(6);
+							}
+
+							@include media-breakpoint-down('md') {
+								width: 100%;
+								margin: px(6) px(0);
+							}
+						}
+
+						.sortedBy {
+							display: flex;
+							width: 27%;
+							flex-direction: row;
+							align-items: center;
+							justify-content: space-between;
+
+
+							.selectBox {
+								background: $grey-100;
+								border: none;
+								width: 70%;
+								height: px(35);
+								color: $grey-400;
+								border-radius: px(8);
+							}
+
+							@include media-breakpoint-down('md') {
+								width: 100%;
+								margin: px(6) px(0);
+							}
+						}
+					}
+				}
+
+				.rankingContent {
+					display: flex;
+					flex-direction: row;
+					flex-wrap: wrap;
+					justify-content: space-between;
+					align-items: center;
+					padding: px(12) px(0);
+					border-bottom: px(1) solid #dedede;
+					width: 100%;
+
+					@include media-breakpoint-down('md') {
+						flex-direction: column;
+						flex-wrap: unset;
+						margin: px(12) px(0);
+					}
+
+					.item {
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						width: 48%;
+						cursor: pointer;
+						background: #f6f6f6;
+						border-radius: px(12);
+						padding: px(6);
+						margin: px(6) px(0);
+						@include media-breakpoint-down('md'){
+							width: 96%;
+						}
+
+						&:hover {
+							transition: all ease-in-out 0.5s;
+							box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.1), 0 2px 15px 0 rgba(0, 0, 0, 0.05);
+						}
+
+						.imgItem {
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							width: px(48);
+							height: px(48);
+							box-shadow: 0 px(3) px(6) 0 rgba(0, 0, 0, 0.12);
+							border-radius: 50%;
+							margin: px(3);
+
+							p {
+								margin: 0;
+								font-size: px(14);
+								font-weight: 700;
+								color: $primary;
+							}
+
+						}
+
+						.itemContent {
+							display: flex;
+							flex-direction: column;
+							height: 100%;
+							width: 100%;
+							padding: px(0) px(12);
+
+							h3 {
+								margin: px(6) px(0);
+							}
+
+							.itemDetail {
+								display: flex;
+								flex-direction: row;
+								justify-content: space-between;
+								align-items: center;
+
+								.itemWrapper{
+									display: flex;
+									flex-direction: column;
+									p{
+										font-size: px(14);
+										font-weight: 450;
+										color: $grey-400;
+										margin: px(2) 0;
+
+										&>b{
+											font-size: px(16);
+											font-weight: 600;
+											color: $black-300;
+										}
+									}
+								}
+							}
+						}
+					}
+
+
+				}
+
+				.rankingPagination {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					padding: px(24) px(0);
+
+					.pagination {
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						padding: px(0) px(12);
+
+						a {
+							display: flex;
+							flex-direction: row;
+							justify-content: center;
+							align-items: center;
+							margin: px(0) px(3);
+							height: px(32);
+							width: px(32);
+							border-radius: 50%;
+							background: $grey-200;
+							box-shadow: 0 px(2) px(6) 0 rgba(255, 255, 255, 0.42);
+							color: $black-300;
+							font-weight: 650;
+							cursor: pointer;
+
+							&.active {
+								background: $primary;
+								color: $white;
+							}
+
+							&:hover {
+								transition: all ease-in-out 0.2s;
+								opacity: 0.8;
+							}
+						}
+					}
+				}
+			}
+
+			.btn{
+				display: flex;
+				flex-direction: row;
+				margin-top: px(24);
+				align-items: center;
+				width: 100%;
+				@include media-breakpoint-down('md'){
+					flex-direction: column;
+					p{
+						padding-right: px(0);
+					}
+					.btnClick{
+						margin-left: px(0);
+					}
+				}
+
+				p{
+					font-size: px(14);
+					font-weight: 550;
+					color: $grey-500;
+					padding-right: px(24);
+
+				}
+
+				.btnClick{
+					padding: px(12) px(24);
+					border-radius: px(6);
+					background: $primary;
+					color: $white;
+					box-shadow: 0 px(3) px(6) 0 rgba(0, 0, 0, 0.12);
+					margin-left: px(12);
+					cursor: pointer;
+
+				}
+			}
+		}
+	}
+
+	.competitionWrapper {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+
+		.contentCompetition {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			padding: px(48) px(0);
+
+			&:nth-child(even) {
+				background: $grey-100;
+			}
+
+			.container {
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+
+
+				.competitionImage {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+
+					img {
+						width: 100%;
+						object-fit: contain;
+					}
+				}
+
+				.content {
+					display: flex;
+					flex-direction: column;
+					width: 100%;
+
+					h2 {
+						color: $primary;
+					}
+
+					.description {
+						line-height: 2;
+						font-size: px(14);
+
+						&.regular {
+							font-weight: 450;
+						}
+
+						&.bold {
+							font-weight: 650;
+						}
+
+						&.tab {
+							padding: px(0) px(16);
+							font-style: italic;
+						}
+					}
+				}
+			}
+		}
+	}
+
+}

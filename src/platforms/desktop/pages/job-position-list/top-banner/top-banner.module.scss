@@ -1,0 +1,45 @@
+.topBanner{
+	display: flex;
+	position: relative;
+	background: url("./top-banner.png") no-repeat;
+	background-size: cover !important;
+	width: 100%;
+	@include media-breakpoint-down('md'){
+		background: url("../../introducing-broker/top-slider/top-slider-min.png");
+		height: 100%;
+	}
+
+	.container{
+		display: flex;
+		width: 100%;
+		height: px(337);
+		@include media-breakpoint-down('md'){
+			height: 100%;
+		}
+
+		.content{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			width: px(760);
+			@include media-breakpoint-down('md'){
+				width: 100%;
+				margin-top: px(96);
+			}
+			h4{
+				font-size: px(24);
+				color: $primary;
+				font-weight: 600;
+				margin: 0;
+			}
+			p{
+				font-size: px(16);
+				color: $white;
+				font-weight: 500;
+				line-height: 2;
+				text-align: justify;
+			}
+		}
+
+	}
+}

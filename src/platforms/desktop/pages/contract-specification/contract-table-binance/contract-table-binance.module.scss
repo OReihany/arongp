@@ -1,0 +1,43 @@
+.contractSpecification{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding: px(48) px(0);
+	color: black;
+
+	.container{
+		display: flex;
+		flex-direction: column;
+
+		h2{
+			margin: px(0) px(0) px(48) 0;
+		}
+
+		.appForexTable {
+			display: flex;
+			width: 100%;
+			border: px(1) solid #435160;
+			border-radius: px(20);
+			overflow: hidden;
+
+			.sidebarLayout {
+				display: flex;
+				flex-direction: column;
+				width: 240px;
+				box-shadow: inset -0.5px 0 0  rgba(#000, 0.25);
+				flex: 0 0 auto;
+			}
+			.tableLayout {
+				display: flex;
+				flex-direction: column;
+				flex:  1 1 auto;
+				overflow: hidden;
+			}
+
+			&.isMobile {
+				flex-direction: column;
+
+			}
+		}
+	}
+}

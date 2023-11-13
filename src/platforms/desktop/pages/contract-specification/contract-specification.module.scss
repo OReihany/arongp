@@ -1,0 +1,17 @@
+.tables{
+	display: none;
+
+	&.active{
+		display: flex ;
+		flex-direction: column ;
+		width: 100% ;
+	}
+}
+.conditions{
+	display: none;
+	&.active{
+		display: flex ;
+		flex-direction: column;
+		width: 100%;
+	}
+}

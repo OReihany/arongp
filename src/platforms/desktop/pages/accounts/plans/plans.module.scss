@@ -1,0 +1,550 @@
+.plans {
+	display: none;
+	flex-direction: column;
+	background: url("../../homepage/importan-symbols-back.png") repeat-y;
+	background-size: cover !important;
+	color: $white;
+	padding: px(48) 0;
+	&.active{
+		display: flex !important;
+	}
+
+	.contentModal {
+		table {
+			width: 100%;
+			direction: ltr;
+
+			thead {
+
+				tr {
+					color: black;
+
+					th {
+						text-align: left;
+						height: px(46);
+						font-size: px(16);
+						font-weight: bold;
+						padding: px(6);
+					}
+				}
+			}
+
+			tbody {
+
+				tr {
+					background-color: #323C50;
+					color: $white;
+
+					td {
+						text-align: left;
+						height: px(36);
+						padding: px(6);
+
+						&:not(:first-of-type) {
+							direction: ltr;
+						}
+					}
+
+					&:nth-child(2n) {
+						background-color: #2C3446;
+					}
+				}
+			}
+		}
+
+		.subtitle {
+			color: $black;
+			margin: 12px 0;
+		}
+
+	}
+
+	.modal {
+		display: none;
+
+		&.active {
+			display: flex;
+			transition: all ease-in-out 0.4s;
+		}
+
+		.content {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+		}
+
+		.container {
+			display: flex;
+			flex-direction: column;
+			position: fixed;
+			background: $white;
+			top: 120px;
+			left: 5%;
+			right: 5%;
+			bottom: 5%;
+			height: 80vh;
+			width: 90%;
+			z-index: 1000;
+			box-shadow: 0 px(3) px(20) 0 rgba(0, 0, 0, 0.42);
+			@include media-breakpoint-down('md') {
+				top: 96px;
+			}
+
+			.modalContent {
+				display: flex;
+				flex-direction: column;
+				height: 85%;
+				overflow: hidden;
+				verflow: -moz-scrollbars-none;
+				scrollbar-width: none;
+				overflow-y: scroll;
+				overflow-x: unset;
+				padding: px(24);
+
+				.title {
+					font-size: px(24);
+					font-weight: 600;
+					color: $primary;
+
+				}
+
+				.modalContentWrapper {
+					display: flex;
+					flex-direction: column;
+					width: 100%;
+
+					.content {
+						width: 100%;
+
+						h5 {
+							font-size: px(18);
+							color: $black;
+							margin: px(12) px(8) px(12) px(0);
+							font-weight: 600;
+						}
+
+						p {
+							color: $grey-500;
+							font-size: px(14);
+							line-height: 1.5;
+							text-align: justify;
+						}
+					}
+				}
+			}
+
+			//.modalContent::-webkit-scrollbar{
+			//	display: none;
+			//}
+			.modalFooter {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				height: 15%;
+				padding-right: px(24);
+				border-top: px(1) solid $grey-400;
+
+				.closeModal {
+					display: flex;
+					align-items: center;
+					height: 60%;
+					padding: px(0) px(24);
+					border: px(1) solid $black-200;
+					font-size: px(14);
+					font-weight: 550;
+					cursor: pointer;
+					border-radius: px(6);
+					color: $grey-500;
+
+					&:hover {
+						background: $red-200;
+						color: $red-500;
+						border: px(1) solid $red-600;
+						transition: all ease-in-out 0.3s;
+					}
+				}
+			}
+		}
+	}
+
+	.container {
+		display: flex;
+		flex-direction: column;
+
+		h2 {
+			margin: 0 0 px(48) 0;
+			color: $primary;
+		}
+
+		.currencyStatus {
+			display: flex;
+			justify-content: center;
+			padding: px(24);
+
+			&.active {
+				& > span {
+					&:first-child {
+						color: $grey-400;
+					}
+
+					&:last-child {
+						color: $green-500;
+					}
+				}
+			}
+
+			& > span {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				padding: px(0) px(24);
+				font-size: px(16);
+				font-weight: 550;
+				color: $grey-400;
+
+				&:first-child {
+					color: $primary;
+				}
+
+			}
+
+			.switch {
+				position: relative;
+				display: inline-block;
+				width: px(48);
+				height: px(28);
+
+				input {
+					opacity: 0;
+					width: 0;
+					height: 0;
+				}
+
+				.slider {
+					position: absolute;
+					cursor: pointer;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					background-color: $primary;
+					-webkit-transition: .4s;
+					transition: .4s;
+
+					&.active {
+						background: $green-500;
+					}
+
+					&.active:before {
+						right: px(4);
+						left: auto;
+					}
+
+					&:before {
+						position: absolute;
+						content: "";
+						height: px(21);
+						width: px(21);
+						left: px(4);
+						bottom: px(4);
+						border-radius: 50%;
+						background-color: white;
+						-webkit-transition: .6s;
+						transition: .6s;
+					}
+
+					&.round {
+						border-radius: px(34);
+					}
+				}
+			}
+		}
+
+		.accountCardWrapper {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			@include media-breakpoint-down('md') {
+				flex-wrap: unset;
+				flex-direction: column;
+			}
+
+			.accountCard {
+				display: flex;
+				flex-direction: column;
+				width: 31%;
+				min-height: px(650);
+				border-radius: px(20);
+				overflow: hidden;
+				background: $black;
+				margin-bottom: px(24);
+				@include media-breakpoint-down('md') {
+					width: 100% !important;
+					&:not(:last-of-type) {
+						margin-bottom: px(24);
+					}
+				}
+
+				.title {
+					display: flex;
+					flex-direction: column;
+					width: 100%;
+					height: px(203);
+					overflow: hidden;
+					padding: px(32) px(32) px(18) px(32);
+					border-bottom: px(3) solid $black-300;
+
+					h4 {
+						padding: 0;
+						margin: 0;
+						color: $primary;
+						font-size: px(20);
+					}
+
+					p {
+						line-height: 2;
+						margin: 0;
+						padding: 0;
+						color: $white;
+						font-size: px(12);
+						text-align: justify;
+					}
+				}
+
+				.features {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					width: 100%;
+					height: px(295);
+					overflow: hidden;
+					overflow-y: unset;
+					overflow-x: auto;
+					verflow: -moz-scrollbars-none;
+					scrollbar-width: none;
+					padding: px(18) px(32);
+					border-bottom: px(3) solid $black-300;
+
+					.feature {
+						display: flex;
+						flex-direction: row;
+
+						i {
+							padding-right: px(12);
+							color: $white;
+							font-size: px(16);
+						}
+
+						.featureName {
+							font-size: px(12);
+							color: $grey-400;
+
+							&.active {
+								font-size: px(14);
+								font-weight: 600;
+								color: $white !important;
+							}
+
+							.featureValue {
+								font-size: px(12);
+								font-weight: 500;
+								color: $white !important;
+							}
+
+						}
+					}
+				}
+
+				.features::-webkit-scrollbar {
+					display: none;
+				}
+
+				.seePlan {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					height: px(48);
+					width: 100%;
+					border-bottom: px(3) solid $black-300;
+
+					a {
+						font-size: px(12);
+						color: $primary;
+						cursor: pointer;
+					}
+				}
+
+				.getStart {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					width: 100%;
+					margin: auto;
+
+					a {
+						padding: px(16) px(48);
+						border: px(1) solid $primary;
+						background: $primary;
+						color: $black;
+						border-radius: px(24);
+						cursor: pointer;
+					}
+				}
+
+			}
+		}
+
+		.attention {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			height: px(168);
+			color: $black;
+			@include media-breakpoint-down('md') {
+				margin-top: px(24);
+				height: 100%;
+			}
+
+			h4 {
+				font-weight: 500;
+				color: $black;
+				@include media-breakpoint-down('md') {
+					font-weight: 650;
+				}
+			}
+
+			p {
+				line-height: 2;
+				font-size: px(12);
+				font-weight: 600;
+			}
+		}
+
+		.tableWrapper {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			height: 100%;
+
+			h2 {
+				margin: px(24) 0;
+			}
+
+			table {
+				width: 100%;
+				color: black;
+				border-collapse: collapse;
+				background: white;
+
+				thead {
+					background: $grey-400;
+
+					tr {
+						height: px(64);
+
+						th {
+							text-align: center;
+						}
+					}
+				}
+
+				tbody {
+					tr {
+						height: px(64);
+
+						&:nth-child(2n) {
+							background: $grey-200;
+						}
+
+						td {
+							text-align: center;
+							padding: px(0) px(24);
+
+							&:first-child {
+								font-weight: 700;
+							}
+
+							@include media-breakpoint-down('md') {
+								padding: px(0) px(8);
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.lastAttention {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+			width: 100%;
+			color: $black;
+			line-height: 2;
+
+			h4 {
+				margin: px(24) 0;
+			}
+
+			p {
+				&:first-child {
+					margin-top: 0 !important;
+				}
+			}
+		}
+
+		.accountCommission {
+			display: flex;
+			flex-direction: column;
+			margin-top: px(24);
+			width: 100%;
+
+			.description {
+				color: $black-400;
+				cursor: pointer;
+
+				.content {
+					table {
+						width: 100%;
+
+						thead {
+
+							tr {
+								color: black;
+
+								th {
+									text-align: left;
+									height: px(46);
+									font-size: px(16);
+									font-weight: bold;
+									padding: px(6);
+								}
+							}
+						}
+
+						tbody {
+
+							tr {
+								background-color: #323C50;
+								color: $white;
+
+								td {
+									text-align: left;
+									height: px(36);
+									padding: px(6);
+
+								}
+
+								&:nth-child(2n) {
+									background-color: #2C3446;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

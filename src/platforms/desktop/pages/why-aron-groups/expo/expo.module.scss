@@ -1,0 +1,79 @@
+.expo {
+	display: flex;
+	width: 100%;
+	padding: px(24) px(0);
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+
+		.expoFeature {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			width: 100%;
+			margin: 24px 0;
+
+
+			@include media-breakpoint-down('md') {
+				flex-direction: column;
+			}
+
+			.left {
+				display: flex;
+				flex-direction: column;
+				width: 43%;
+
+				p{
+					font-size: px(14);
+					line-height: 2;
+				}
+
+				@include media-breakpoint-down('md') {
+					width: 100%;
+					margin-bottom: px(24);
+				}
+			}
+
+			.right {
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: center;
+				width: 43%;
+
+				img{
+					max-height: 300px;
+					object-fit: contain;
+				}
+
+				@include media-breakpoint-down('md') {
+					width: 100%;
+					margin-bottom: px(24);
+				}
+			}
+		}
+		.expoComp{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			margin: 24px 0;
+
+			p{
+				line-height: 2;
+				font-size: 14px;
+			}
+			.expoImage{
+
+				img{
+					max-height: 320px;
+					width: 100%;
+					object-fit: contain;
+				}
+			}
+		}
+	}
+}

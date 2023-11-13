@@ -1,0 +1,32 @@
+.topSlider {
+	display: flex;
+	flex-direction: row;
+	background: url("./top-slider.png");
+	background-size: cover !important;
+	width: 100%;
+	height: px(351);
+	position: relative;
+
+	.contentWrapper {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 2;
+
+		.content {
+			display: flex;
+			color: $white;
+			padding: px(0) px(0) px(0) px(270);
+			width: px(540);
+
+			h4 {
+				font-size: px(24);
+				font-weight: 600;
+				line-height: 2;
+			}
+		}
+	}
+}

@@ -1,0 +1,22 @@
+.tradingPlatform {
+	display: flex;
+	background-size: cover;
+	height: 100%;
+	padding: px(48) px(0);
+	//height: calc(100vh - #{px(128)});
+	//height: calc(var(--vh, 1vh) * 100 - #{px(128)});
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		width: 100%;
+
+		p{
+			font-size: px(14);
+			font-weight: 500;
+			line-height: 2;
+			color: $black-400;
+		}
+	}
+}
